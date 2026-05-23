@@ -1,0 +1,99 @@
+<div class="relative min-h-screen overflow-hidden bg-boho-bg text-boho-text">
+
+  <!-- Background Glow -->
+  <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px]
+              bg-boho-primary/10 blur-3xl rounded-full pointer-events-none">
+  </div>
+
+  <!-- Particles -->
+  <div id="tsparticles"
+       class="absolute inset-0 -z-10 opacity-30">
+  </div>
+
+  <div class="flex flex-col min-h-screen relative z-10">
+
+    <!-- NAVBAR -->
+    <header
+      class="sticky top-0 z-50 border-b border-white/5
+             backdrop-blur-xl bg-boho-bg/70">
+
+      <nav class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a routerLink="/"
+           class="text-2xl font-black tracking-tight text-boho-heading">
+          Alexsandro<span class="text-boho-primary">.</span>
+        </a>
+
+        <!-- Menu -->
+        <div
+          class="flex items-center gap-8 text-sm font-medium text-boho-muted">
+
+          <a
+            routerLink="/"
+            routerLinkActive="text-boho-primary"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="hover:text-boho-heading transition-all duration-300">
+
+            Home
+          </a>
+
+          <a
+            routerLink="/projects"
+            routerLinkActive="text-boho-primary"
+            class="hover:text-boho-heading transition-all duration-300">
+
+            Projetos
+          </a>
+
+          <a
+            routerLink="/about"
+            routerLinkActive="text-boho-primary"
+            class="hover:text-boho-heading transition-all duration-300">
+
+            Sobre
+          </a>
+
+        </div>
+
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-grow">
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      class="border-t border-white/5
+             bg-black/5 backdrop-blur-lg">
+
+      <div
+        class="max-w-7xl mx-auto px-8 py-8
+               flex flex-col md:flex-row
+               items-center justify-between gap-4">
+
+        <p class="text-sm text-boho-muted">
+          © 2026 Alexsandro Moraes
+        </p>
+
+        <div class="flex items-center gap-5 text-sm">
+
+          <a href="#" class="hover:text-boho-primary transition-colors">
+            GitHub
+          </a>
+
+          <a href="#" class="hover:text-boho-primary transition-colors">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+</div>

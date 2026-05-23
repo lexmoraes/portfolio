@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "70e81a86-31c5-46c5-963a-3ba7226b4708"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -24,9 +25,8 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/material-theme.scss", "src/styles.css"],
+            "polyfills": [],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {

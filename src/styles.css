@@ -1,3 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+/* Se o seu projeto ainda estiver usando o Tailwind v3 legada, mantenha as 3 linhas abaixo.
+   Caso contrário, a linha @import ali de cima já faz toda a mágica sozinha! */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import 'tailwindcss';
+html, body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #E0D3BA; /* Cor Boho de Fundo */
+  color: #2C2523;
+  min-height: 100vh;
+}
