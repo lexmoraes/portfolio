@@ -1,20 +1,22 @@
-import { Component, signal, afterNextRender} from '@angular/core';
-import { Project } from '../../core/models/project';
-import { MOCK_PROJECTS } from '../../core/mocks/projects-mocks';
+import { Component, signal, afterNextRender } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {CommonModule} from '@angular/common';
+import { Project } from '../../core/models/project';
+import { MOCK_PROJECTS } from '../../core/mocks/projects-mocks';
+import { ProjectListComponent } from '../projects/pages/project-list/project-list.component';
+import { AboutComponent } from '../about/about.component';
 
 declare const AOS: any;
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule, ProjectListComponent, AboutComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent { // 👈 2. Removemos o "implements AfterViewInit"
+export class HomeComponent {
   projects = signal<Project[]>(MOCK_PROJECTS);
   developerName = signal<string>('Alexsandro Moraes');
 

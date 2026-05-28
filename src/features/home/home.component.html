@@ -1,9 +1,7 @@
-<section class="relative min-h-screen flex items-center bg-[#E0D3BA] text-[#2C2523] overflow-hidden transition-colors duration-300">
+<section id="hero" class="relative py-28 overflow-hidden bg-boho-bg text-boho-text">
 
   <div class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-
     <div class="flex flex-col items-start text-left max-w-xl">
-
       <span class="text-[#AC6D35] font-mono text-xs tracking-widest block mb-4 uppercase font-semibold" data-aos="fade-right">
         Disponível para novos desafios
       </span>
@@ -13,33 +11,36 @@
       </h1>
 
       <p class="mt-6 text-base md:text-lg text-[#5A4F4A] font-normal leading-relaxed" data-aos="fade-right" data-aos-delay="200">
-        Desenvolvedor de Software focado em criar aplicações frontend escaláveis, performáticas e com experiências visuais de alto impacto.
+        Desenvolvedor de Software focado em criar aplicações escaláveis, performáticas e com experiências de usabilidade e visuais de alto impacto.
       </p>
 
       <div class="mt-10 flex gap-4" data-aos="zoom-in" data-aos-delay="400">
-        <button mat-raised-button
-                class="!bg-[#AC6D35] !text-white hover:!bg-[#B87B41] !px-8 !py-6 !rounded-xl !font-medium !shadow-md transition-all duration-300">
+        <a href="#projects" mat-raised-button
+           class="!bg-[#AC6D35] !text-white hover:!bg-[#B87B41] !px-8 !py-6 !rounded-xl !font-medium !shadow-md transition-all duration-300 flex items-center justify-center">
           Ver Projetos
-        </button>
+        </a>
 
-        <button mat-stroke-button
-                class="!border-[#5A4F4A] !text-[#5A4F4A] hover:!bg-[#1A1513]/5 !px-8 !py-6 !rounded-xl">
+        <a href="#about" mat-stroke-button
+           class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
           Entrar em contato
-        </button>
+        </a>
       </div>
     </div>
 
     <div class="flex justify-center items-center relative h-[450px] md:h-[550px]" data-aos="fade-left">
-
       <div class="absolute w-[320px] h-[320px] md:w-[420px] md:h-[420px] bg-[#B68E52] opacity-90 animate-pulse-slow
                   rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] transition-all duration-500">
       </div>
-
-      <img src="assets/images/teste.jpg"
-           alt="Alexsandro Moraes"
+      <img src="assets/images/teste.jpg" alt="Alexsandro Moraes"
            class="relative z-10 w-[280px] md:w-[380px] h-[280px] md:h-[380px] object-cover rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] drop-shadow-[0_10px_20px_rgba(44,37,35,0.15)]" />
-
     </div>
-
   </div>
 </section>
+
+<div id="projects">
+  <app-project-list></app-project-list>
+</div>
+
+<div id="about">
+  <app-about></app-about>
+</div>
