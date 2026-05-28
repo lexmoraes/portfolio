@@ -43,7 +43,7 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     githubUrl: 'https://github.com/antonio-pss/bit-academy-front',
     deployUrl: 'https://github.com/antonio-pss/bit-academy-back',
-    imageUrl: 'assets/images/projects/bit-academy.webp',
+    imageUrl: 'assets/projects/bit-academy.jpg',
     featured: true,
     aosAnimation: 'fade-right'
   },
@@ -85,7 +85,7 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     githubUrl: 'https://github.com/lexmoraes/astrobit-backend',
     deployUrl: 'https://antonio-pss.github.io/astrobit/',
-    imageUrl: 'assets/images/projects/astrobit.webp',
+    imageUrl: 'assets/projects/astrobit.png',
     featured: true,
     aosAnimation: 'fade-up'
   },

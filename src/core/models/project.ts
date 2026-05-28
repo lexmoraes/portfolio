@@ -9,4 +9,5 @@ export interface Project {
   imageUrl: string;
   featured: boolean;
   aosAnimation?: string;
+  iframeUrl?: string;
 }
