@@ -21,7 +21,7 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     githubUrl: 'https://planit.fpf.br',
     deployUrl: 'https://planit.fpf.br',
-    imageUrl: 'assets/images/planit.jpeg',
+    imageUrl: 'assets/images/projects/planit.jpeg',
     featured: true,
     aosAnimation: 'fade-up'
   },
@@ -43,7 +43,7 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     githubUrl: 'https://github.com/antonio-pss/bit-academy-front',
     deployUrl: 'https://github.com/antonio-pss/bit-academy-back',
-    imageUrl: 'assets/projects/bit-academy.jpg',
+    imageUrl: 'assets/images/projects/bit-academy.jpg',
     featured: true,
     aosAnimation: 'fade-right'
   },
@@ -63,7 +63,7 @@ export const MOCK_PROJECTS: Project[] = [
       'Tiled'
     ],
     githubUrl: 'https://github.com/lexmoraes',
-    imageUrl: 'assets/images/projects/bit-debugger.webp',
+    imageUrl: 'assets/images/projects/bit-debugger.jpg',
     featured: false,
     aosAnimation: 'fade-left'
   },
@@ -85,7 +85,7 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     githubUrl: 'https://github.com/lexmoraes/astrobit-backend',
     deployUrl: 'https://antonio-pss.github.io/astrobit/',
-    imageUrl: 'assets/projects/astrobit.png',
+    imageUrl: 'assets/images/projects/astrobit.png',
     featured: true,
     aosAnimation: 'fade-up'
   },
@@ -106,7 +106,7 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     githubUrl: 'https://github.com/lexmoraes',
     deployUrl: 'https://lexmoraes.dev',
-    imageUrl: 'assets/images/projects/portfolio.webp',
+    imageUrl: 'assets/images/projects/portfolio.png',
     featured: true,
     aosAnimation: 'fade-right'
   }
