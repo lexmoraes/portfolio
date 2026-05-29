@@ -21,7 +21,7 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     githubUrl: 'https://planit.fpf.br',
     deployUrl: 'https://planit.fpf.br',
-    imageUrl: 'assets/images/projects/planit.jpeg',
+    imageUrl: 'assets/images/projects/planit.jpg',
     featured: true,
     aosAnimation: 'fade-up'
   },
