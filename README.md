@@ -2,6 +2,12 @@
 
 Portfolio desenvolvido com Angular para apresentar minha trajetória, projetos, habilidades e conquistas como desenvolvedor de software.
 
+## 🌐 Acesse o Portfólio
+
+O projeto está disponível em:
+
+👉 **https://www.alexmoraes.dev**
+
 ## ✨ Sobre o projeto
 
 Este projeto foi criado com foco em:
@@ -39,3 +45,4 @@ src/
 ├── layouts/
 ├── assets/
 └── styles/
+```
