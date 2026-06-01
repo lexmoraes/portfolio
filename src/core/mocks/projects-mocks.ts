@@ -19,7 +19,6 @@ export const MOCK_PROJECTS: Project[] = [
       'OAuth',
       'GitLab API'
     ],
-    githubUrl: 'https://planit.fpf.br',
     deployUrl: 'https://planit.fpf.br',
     imageUrl: 'assets/images/projects/planit.jpg',
     featured: true,
@@ -31,7 +30,7 @@ export const MOCK_PROJECTS: Project[] = [
     title: 'Bit Academy',
     subtitle: 'Ecossistema Inteligente de Gestão Escolar',
     description:
-      'Projeto modular desenvolvido para modernizar a gestão escolar e potencializar o aprendizado com recursos inteligentes e gamificação. Desenvolvimento frontend em Angular e backend em Django REST Framework com arquitetura modular e deploy utilizando Docker.',
+      'Projeto modular desenvolvido para modernizar a gestão escolar e potencializar o aprendizado com recursos inteligentes e gamificação. Desenvolvimento frontend em Angular e backend in Django REST Framework com arquitetura modular e deploy utilizando Docker.',
     technologies: [
       'Angular',
       'TypeScript',
@@ -41,8 +40,8 @@ export const MOCK_PROJECTS: Project[] = [
       'Docker',
       'REST API'
     ],
-    githubUrl: 'https://github.com/antonio-pss/bit-academy-front',
-    deployUrl: 'https://github.com/antonio-pss/bit-academy-back',
+    gitFrontendUrl: 'https://github.com/antonio-pss/bit-academy-frontend',
+    gitBackendUrl: 'https://github.com/antonio-pss/bit-academy-back',
     imageUrl: 'assets/images/projects/bit-academy.jpg',
     featured: true,
     aosAnimation: 'fade-right'
@@ -62,7 +61,7 @@ export const MOCK_PROJECTS: Project[] = [
       'Aseprite',
       'Tiled'
     ],
-    githubUrl: 'https://github.com/lexmoraes',
+    gitFrontendUrl: 'https://github.com/lexmoraes',
     imageUrl: 'assets/images/projects/bit-debugger.jpg',
     featured: false,
     aosAnimation: 'fade-left'
@@ -83,9 +82,11 @@ export const MOCK_PROJECTS: Project[] = [
       'PostgreSQL',
       'Docker'
     ],
-    githubUrl: 'https://github.com/lexmoraes/astrobit-backend',
+    gitBackendUrl: 'https://github.com/lexmoraes/astrobit-backend',
+    gitFrontendUrl: 'https://github.com/alef-nunesmonteiro/astrobit-front',
     deployUrl: 'https://antonio-pss.github.io/astrobit/',
     imageUrl: 'assets/images/projects/astrobit.png',
+    scientificArticle: 'https://periodicos.ufsm.br/reter/article/view/94680',
     featured: true,
     aosAnimation: 'fade-up'
   },
@@ -104,7 +105,7 @@ export const MOCK_PROJECTS: Project[] = [
       'Angular Signals',
       'Responsive Design'
     ],
-    githubUrl: 'https://github.com/lexmoraes',
+    gitFrontendUrl: 'https://github.com/lexmoraes/portfolio',
     deployUrl: 'https://lexmoraes.dev',
     imageUrl: 'assets/images/projects/portfolio.png',
     featured: true,

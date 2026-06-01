@@ -4,10 +4,12 @@ export interface Project {
   subtitle: string;
   description: string;
   technologies: string[];
-  githubUrl: string;
+  gitBackendUrl?: string;
+  gitFrontendUrl?: string;
   deployUrl?: string;
   imageUrl: string;
   featured: boolean;
   aosAnimation?: string;
   iframeUrl?: string;
+  scientificArticle?: string;
 }

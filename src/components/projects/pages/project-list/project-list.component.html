@@ -7,7 +7,7 @@
     <div class="max-w-4xl mb-20">
       <span class="text-sm uppercase tracking-[0.3em] text-boho-primary block font-semibold">Portfolio</span>
       <h1 class="mt-6 text-5xl md:text-7xl font-black leading-tight text-boho-heading">
-        Projetos que unem <span class="text-boho-primary">arquitetura,</span> performance e experiência.
+        Projetos que unem <span class="text-boho-primary">arquitetura,</span> performance e experience.
       </h1>
       <p class="mt-8 text-lg text-boho-muted leading-relaxed max-w-2xl font-light">
         Aplicações desenvolvidas com foco em escalabilidade, experiência do usuário e interfaces modernas utilizando Angular, Django e tecnologias modernas do ecossistema web.
@@ -33,19 +33,38 @@
               }
             </div>
 
-            <div class="flex gap-4 mt-10">
+            <div class="flex flex-wrap gap-4 mt-10">
               @if (featured.deployUrl) {
                 <a [href]="featured.deployUrl"
                    target="_blank"
                    class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
-                  Live Demo
+                  Acesse aqui
                 </a>
               }
-              <a [href]="featured.githubUrl"
-                 target="_blank"
-                 class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
-                GitHub
-              </a>
+
+              @if(featured.scientificArticle){
+                <a [href]="featured.scientificArticle"
+                   target="_blank"
+                   class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
+                Artigo completo
+                </a>
+              }
+
+              @if (featured.gitFrontendUrl) {
+                <a [href]="featured.gitFrontendUrl"
+                   target="_blank"
+                   class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
+                  Git frontend
+                </a>
+              }
+
+              @if (featured.gitBackendUrl) {
+                <a [href]="featured.gitBackendUrl"
+                   target="_blank"
+                   class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
+                  Git backend
+                </a>
+              }
             </div>
           </div>
         </div>
@@ -76,19 +95,38 @@
           </div>
 
           <div class="p-6">
-            <div class="flex gap-3 border-t border-[#D9BE98]/40 pt-5 w-full">
+            <div class="flex flex-wrap gap-3 border-t border-[#D9BE98]/40 pt-5 w-full">
               @if(project.deployUrl){
                 <a [href]="project.deployUrl"
                    target="_blank"
-                   class="flex-1 px-4 py-2.5 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] text-sm font-medium text-center transition-colors duration-300">
-                  Live Demo
+                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] text-sm font-medium text-center transition-colors duration-300">
+                  Acesse aqui
                 </a>
               }
-              <a [href]="project.githubUrl"
-                 target="_blank"
-                 class="flex-1 px-4 py-2.5 rounded-xl border border-boho-muted/40 bg-transparent text-boho-heading hover:border-boho-primary/50 hover:text-boho-primary text-sm font-medium text-center transition-all">
-                GitHub
-              </a>
+
+              @if(project.scientificArticle){
+                <a [href]="project.scientificArticle"
+                   target="_blank"
+                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] text-sm font-medium text-center transition-colors duration-300">
+                  Artigo
+                </a>
+              }
+
+              @if(project.gitFrontendUrl){
+                <a [href]="project.gitFrontendUrl"
+                   target="_blank"
+                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] text-sm font-medium text-center transition-colors duration-300">
+                  Git frontend
+                </a>
+              }
+
+              @if(project.gitBackendUrl){
+                <a [href]="project.gitBackendUrl"
+                   target="_blank"
+                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] text-sm font-medium text-center transition-colors duration-300">
+                  Git backend
+                </a>
+              }
             </div>
           </div>
 
