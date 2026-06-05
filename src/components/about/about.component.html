@@ -1,24 +1,24 @@
-<section class="py-24 min-h-screen bg-boho-bg text-boho-text">
+<section class="py-24 min-h-screen bg-portfolio-bg text-portfolio-text transition-colors duration-500">
   <div class="max-w-3xl mx-auto px-6">
 
     <div class="mb-20">
-      <h1 class="text-4xl font-extrabold tracking-tight text-boho-heading mb-6">
+      <h1 class="text-4xl font-extrabold tracking-tight text-portfolio-heading mb-6 transition-colors duration-500">
         Sobre Mim
       </h1>
-      <p class="text-base md:text-lg text-boho-text leading-relaxed font-light">
+      <p class="text-base md:text-lg text-portfolio-text leading-relaxed font-light transition-colors duration-500">
         Olá! Meu nome é Alexsandro Moraes. Sou um desenvolvedor fascinado por criar códigos limpos, arquiteturas sustentáveis e interfaces que prendem a atenção do usuário. Busco sempre resolver problemas com base nos critérios definidos, extraindo o máximo de performance das ferramentas modernas.
       </p>
     </div>
 
-    <div class="mb-24 border-t border-boho-sand/40 pt-16 text-left">
-  <span class="text-xs uppercase tracking-[0.25em] text-boho-primary font-bold block mb-4">
-    Está precisando de um desenvolvedor?
-  </span>
+    <div class="mb-24 border-t border-portfolio-border/40 pt-16 text-left transition-colors duration-500">
+      <span class="text-xs uppercase tracking-[0.25em] text-portfolio-primary font-bold block mb-4 transition-colors duration-500">
+        Está precisando de um desenvolvedor?
+      </span>
 
       <button (click)="toggleContact()"
-              class="group text-4xl md:text-5xl font-black tracking-tight text-boho-heading hover:text-boho-primary text-left transition-colors duration-300 focus:outline-none flex items-center gap-3">
+              class="group text-4xl md:text-5xl font-black tracking-tight text-portfolio-heading hover:text-portfolio-primary text-left transition-colors duration-300 focus:outline-none flex items-center gap-3">
         Vamos trabalhar juntos?
-        <span class="inline-block transition-transform duration-300 group-hover:translate-x-2 text-boho-primary">→</span>
+        <span class="inline-block transition-transform duration-300 group-hover:translate-x-2 text-portfolio-primary">→</span>
       </button>
 
       <div [class]="showContact()
@@ -27,46 +27,46 @@
 
         <a href="https://wa.me/5592996165069?text=Olá,%20Alexsandro!%20Acessei%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade."
            target="_blank"
-           class="flex items-center justify-between p-5 rounded-2xl bg-[#DCCBA4] border border-[#D9BE98] hover:border-boho-primary group/link transition-all shadow-sm">
+           class="flex items-center justify-between p-5 rounded-2xl bg-portfolio-card border border-portfolio-border hover:border-portfolio-primary group/link transition-all shadow-sm duration-500">
           <div>
-            <h4 class="font-bold text-boho-heading text-sm">Mensagem Direta</h4>
-            <p class="text-xs text-boho-muted mt-0.5">Chamar no WhatsApp</p>
+            <h4 class="font-bold text-portfolio-heading text-sm transition-colors duration-500">Mensagem Direta</h4>
+            <p class="text-xs text-portfolio-text/70 mt-0.5 transition-colors duration-500">Chamar no WhatsApp</p>
           </div>
-          <span class="text-boho-primary font-bold group-hover/link:translate-x-1 transition-transform">↗</span>
+          <span class="text-portfolio-primary font-bold group-hover/link:translate-x-1 transition-transform">↗</span>
         </a>
 
         <a href="mailto:lexfisica@gmail.com?subject=Oportunidade%20de%20Projeto%20-%20Portfólio"
-           class="flex items-center justify-between p-5 rounded-2xl bg-[#DCCBA4] border border-[#D9BE98] hover:border-boho-primary group/link transition-all shadow-sm">
+           class="flex items-center justify-between p-5 rounded-2xl bg-portfolio-card border border-portfolio-border hover:border-portfolio-primary group/link transition-all shadow-sm duration-500">
           <div>
-            <h4 class="font-bold text-boho-heading text-sm">E-mail Profissional</h4>
-            <p class="text-xs text-boho-muted mt-0.5">lexfisica&#64;gmail.com</p>
+            <h4 class="font-bold text-portfolio-heading text-sm transition-colors duration-500">E-mail Profissional</h4>
+            <p class="text-xs text-portfolio-text/70 mt-0.5 transition-colors duration-500">lexfisica&#64;gmail.com</p>
           </div>
-          <span class="text-boho-primary font-bold group-hover/link:translate-x-1 transition-transform">↗</span>
+          <span class="text-portfolio-primary font-bold group-hover/link:translate-x-1 transition-transform">↗</span>
         </a>
 
       </div>
     </div>
 
     <div>
-      <h2 class="text-2xl font-bold text-boho-heading mb-10">
+      <h2 class="text-2xl font-bold text-portfolio-heading mb-10 transition-colors duration-500">
         Trajetória & Conquistas
       </h2>
 
-      <div class="relative border-l-2 border-[#D9BE98] ml-4 space-y-12 py-2">
+      <div class="relative border-l-2 border-portfolio-border ml-4 space-y-12 py-2 transition-colors duration-500">
         @for (event of history(); track event.title) {
           <div class="relative pl-6">
-            <div class="absolute w-4 h-4 bg-boho-primary rounded-full -left-[9px] top-1.5 border-4 border-boho-bg shadow-sm"></div>
+            <div class="absolute w-4 h-4 bg-portfolio-primary rounded-full -left-[9px] top-1.5 border-4 border-portfolio-bg shadow-sm transition-all duration-500"></div>
 
-            <span class="text-xs font-mono font-bold text-boho-primary uppercase block mb-1">
+            <span class="text-xs font-mono font-bold text-portfolio-primary uppercase block mb-1 transition-colors duration-500">
               {{ event.year }}
             </span>
-            <h3 class="text-xl font-bold text-boho-heading leading-tight">
+            <h3 class="text-xl font-bold text-portfolio-heading leading-tight transition-colors duration-500">
               {{ event.title }}
             </h3>
-            <span class="text-sm text-boho-muted block mb-3 font-medium">
+            <span class="text-sm text-portfolio-text/70 block mb-3 font-medium transition-colors duration-500">
               {{ event.institution }}
             </span>
-            <p class="text-sm text-boho-muted leading-relaxed font-light">
+            <p class="text-sm text-portfolio-text/80 leading-relaxed font-light transition-colors duration-500">
               {{ event.description }}
             </p>
           </div>

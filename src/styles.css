@@ -1,16 +1,146 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+/* 🎨 1. O CORAÇÃO DOS TEMAS: MAPEAMENTO DO TAILWIND 4 */
+@theme {
+  --color-portfolio-bg: var(--bg-page);
+  --color-portfolio-card: var(--bg-card);
+  --color-portfolio-border: var(--border-color);
+  --color-portfolio-text: var(--text-body);
+  --color-portfolio-heading: var(--text-heading);
+  --color-portfolio-primary: var(--primary-color);
+}
+
+/* 🟢 ESTADO 1: CLARO BOHO (PADRÃO) */
+:root, html, html.light {
+  --bg-page: #E0D3BA;
+  --bg-card: #DCCBA4;
+  --border-color: #D9BE98;
+  --text-body: #5A4F4A;
+  --text-heading: #1A1513;
+  --primary-color: #AC6D35;
+}
+
+/* 🟤 ESTADO 2: ESCURO TERROSO (DARK) */
+html.dark {
+  --bg-page: #12100E;
+  --bg-card: #1A1714;
+  --border-color: #2C2523;
+  --text-body: #C5BAA2;
+  --text-heading: #FFFFFF;
+  --primary-color: #CEB07D;
+}
+
+/* 🟢 ESTADO 3: MATRIX MODE */
+html.matrix {
+  --bg-page: #000000;
+  --bg-card: #050505;
+  --border-color: #317e31;
+  --text-body: #c3c3c3;
+  --text-heading: #c3c3c3;
+  --primary-color: #1a981a;
+}
+
+/* 🛠️ 2. RESETS E CONFIGURAÇÕES GLOBAIS */
 html, body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #E0D3BA;
-  color: #2C2523;
+  background-color: var(--bg-page);
+  color: var(--text-body);
   min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+html.matrix, html.matrix body {
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* 🌌 3. ANIMAÇÃO EXCLUSIVA DA CHUVA MATRIX */
+.matrix-bg {
+  display: none;
+  color: #317e31;
+}
+
+html.matrix .matrix-bg {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  opacity: 0.18;
+  pointer-events: none;
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
+  repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.15) 0px, rgba(0, 255, 0, 0.15) 1px, transparent 1px, transparent 10px);
+  animation: matrixMove 20s linear infinite;
+}
+
+@keyframes matrixMove {
+  from { background-position: 0 0; }
+  to { background-position: 0 1000px; }
+}
+
+/* ==========================================================================
+   🚨 CONTROLE TOTAL DO OVERLAY DO MENU (ANTI-OVERRIDE DO MATERIAL)
+   ========================================================================== */
+
+/* Força o container do overlay a encolher horizontalmente */
+div.mat-mdc-menu-panel.custom-theme-menu {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+
+  /* 🌟 Força o menu a ser nitidamente mais estreito */
+  width: 90px !important;
+  min-width: 90px !important;
+  max-width: 90px !important;
+}
+
+/* Garante o alinhamento em coluna e remove paddings fantasmas do Material */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  padding: 10px !important;
+  margin: 0 !important;
+}
+
+/* 🌟 Alinhamento do Título Interno */
+div.mat-mdc-menu-panel.custom-theme-menu .menu-header {
+  padding-left: 30px !important;
+  padding-right: 20px !important;
+  padding-top: 15px !important;
+  padding-bottom: 8px !important;
+}
+
+/* 🌟 Afasta os ícones das bordas esquerda e direita com segurança */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item {
+  padding-left: 40px !important;  /* Distância do ícone esquerdo até a borda */
+  padding-right: 40px !important; /* Distância do check da direita até a borda */
+  color: var(--text-heading) !important;
+  font-size: 14px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  border-radius: 12px !important;
+  margin: 2px 2px 2px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Efeito de Hover corrigido */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item:hover {
+  background-color: var(--primary-color) !important;
+  background-image: linear-gradient(rgba(255,255,255,0.07), rgba(255,255,255,0.07)) !important;
+}
+
+/* Ícones internos sempre na cor primária */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item .mat-icon {
+  color: var(--primary-color) !important;
+  margin: 0 !important;
 }
