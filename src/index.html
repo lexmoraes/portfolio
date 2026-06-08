@@ -18,10 +18,10 @@
     (function () {
       try {
         var savedTheme = localStorage.getItem('user-portfolio-theme');
-        if (savedTheme === 'dark' || savedTheme === 'matrix') {
+        if (savedTheme === 'light' || savedTheme === 'matrix') {
           document.documentElement.classList.add(savedTheme);
         } else {
-          document.documentElement.classList.add('light');
+          document.documentElement.classList.add('dark');
         }
       } catch (e) {
         console.error('Erro ao carregar tema antecipado:', e);

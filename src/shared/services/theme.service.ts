@@ -15,6 +15,8 @@ export class ThemeService {
       const savedTheme = localStorage.getItem('user-portfolio-theme') as ThemeMode;
       if (savedTheme) {
         this.setTheme(savedTheme);
+      } else {
+        this.setTheme('dark');
       }
     }
   }

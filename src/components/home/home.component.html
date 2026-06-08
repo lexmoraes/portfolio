@@ -29,12 +29,14 @@
 
     <div class="flex justify-center items-center relative h-[450px] md:h-[550px]" data-aos="fade-left">
       <div class="absolute w-[320px] h-[320px] md:w-[420px] md:h-[420px] bg-portfolio-primary opacity-40 animate-pulse-slow
-              rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] transition-all duration-500">
+          rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] transition-all duration-500">
       </div>
 
-      <img [src]="themeService.currentTheme() === 'dark'
-               ? 'assets/images/profile/profile-dark.jpeg'
-               : 'assets/images/profile/profile-light.jpg'"
+      <img [src]="themeService.currentTheme() === 'matrix'
+               ? 'assets/images/profile/profile-matrix.jpeg'
+               : themeService.currentTheme() === 'dark'
+                 ? 'assets/images/profile/profile-dark.jpeg'
+                 : 'assets/images/profile/profile-light.jpg'"
            alt="Alexsandro Moraes"
            class="relative z-10 w-[280px] md:w-[380px] h-[280px] md:h-[380px] object-cover rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] drop-shadow-[0_10px_20px_rgba(44,37,35,0.15)] border border-portfolio-border/30" />
     </div>

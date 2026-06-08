@@ -58,10 +58,12 @@ html.matrix, html.matrix body {
   font-family: 'Courier New', Courier, monospace !important;
 }
 
-/* 🌌 3. ANIMAÇÃO EXCLUSIVA DA CHUVA MATRIX */
-.matrix-bg {
-  display: none;
-  color: #317e31;
+.matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.5;
 }
 
 html.matrix .matrix-bg {
@@ -85,62 +87,89 @@ html.matrix .matrix-bg {
 }
 
 /* ==========================================================================
-   🚨 CONTROLE TOTAL DO OVERLAY DO MENU (ANTI-OVERRIDE DO MATERIAL)
+   🚨 CONTROLE ULTRACALIBRADO DO MENU (SLIM, SIMÉTRICO E CENTRALIZADO)
    ========================================================================== */
 
-/* Força o container do overlay a encolher horizontalmente */
+/* 1. O Container do Overlay (Proporcional ao texto e com bordas suaves) */
 div.mat-mdc-menu-panel.custom-theme-menu {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
-  border-radius: 20px !important;
+  background-color: #DCCBA4 !important; /* Fundo fixo Claro Boho */
+  border: 1px solid #D9BE98 !important; /* Borda fixa Claro Boho */
+  box-shadow: 0 10px 20px rgba(26, 21, 19, 0.15) !important;
+  border-radius: 16px !important; /* Raio reduzido para harmonizar com o tamanho menor */
   overflow: hidden !important;
 
-  /* 🌟 Força o menu a ser nitidamente mais estreito */
-  width: 90px !important;
-  min-width: 90px !important;
-  max-width: 90px !important;
+  /* 📐 Largura Slim Perfeita: Nem apertado, nem gigante */
+  width: 175px !important;
+  min-width: 175px !important;
+  max-width: 175px !important;
 }
 
-/* Garante o alinhamento em coluna e remove paddings fantasmas do Material */
+/* 2. Alinhamento da lista interna (Remove espaçamentos fantasmas) */
 div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-content {
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important;
-  padding: 10px !important;
+  padding: 6px !important; /* Respiro perfeito entre as bordas do menu e os botões */
   margin: 0 !important;
 }
 
-/* 🌟 Alinhamento do Título Interno */
+/* 3. O Cabeçalho ("Escolha o Tema") perfeitamente alinhado */
 div.mat-mdc-menu-panel.custom-theme-menu .menu-header {
-  padding-left: 30px !important;
-  padding-right: 20px !important;
-  padding-top: 15px !important;
-  padding-bottom: 8px !important;
+  padding: 6px 12px 6px 12px !important;
+  margin-bottom: 4px !important;
+  border-bottom: 1px solid rgba(172, 109, 53, 0.15) !important;
+}
+div.mat-mdc-menu-panel.custom-theme-menu .menu-header span {
+  color: #AC6D35 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
 }
 
-/* 🌟 Afasta os ícones das bordas esquerda e direita com segurança */
+/* 4. Os Botões (Itens da Lista) com distribuição simétrica */
 div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item {
-  padding-left: 40px !important;  /* Distância do ícone esquerdo até a borda */
-  padding-right: 40px !important; /* Distância do check da direita até a borda */
-  color: var(--text-heading) !important;
-  font-size: 14px !important;
-  height: 40px !important;
-  min-height: 40px !important;
-  border-radius: 12px !important;
-  margin: 2px 2px 2px !important;
+  /* 🌟 Paddings laterais idênticos para afastar os ícones das bordas com elegância */
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  height: 38px !important; /* Altura mais compacta e proporcional */
+  min-height: 38px !important;
+  border-radius: 10px !important;
+  margin: 2px 0 !important;
   display: flex !important;
   align-items: center !important;
 }
 
-/* Efeito de Hover corrigido */
-div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item:hover {
-  background-color: var(--primary-color) !important;
-  background-image: linear-gradient(rgba(255,255,255,0.07), rgba(255,255,255,0.07)) !important;
+/* 5. Trava de fontes e cores internas (MDC Overrides) */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item,
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item .mdc-list-item__label,
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item span {
+  color: #1A1513 !important; /* Texto escuro do Claro Boho permanente */
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
 }
 
-/* Ícones internos sempre na cor primária */
-div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item .mat-icon {
-  color: var(--primary-color) !important;
+/* Hover sutil */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item:hover {
+  background-color: rgba(172, 109, 53, 0.12) !important;
+  background-image: none !important;
+}
+
+/* 6. Redimensionamento dos Ícones (Essencial para não estourar o layout) */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-icon {
+  color: #AC6D35 !important;
+  font-size: 18px !important; /* Reduzido de 24px para 18px para ficar delicado e simétrico */
+  width: 18px !important;
+  height: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   margin: 0 !important;
+}
+
+/* Tamanho exclusivo para o ícone de Check ficar discreto na direita */
+div.mat-mdc-menu-panel.custom-theme-menu .check-icon {
+  font-size: 15px !important;
+  width: 15px !important;
+  height: 15px !important;
 }

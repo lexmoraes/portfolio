@@ -1,5 +1,10 @@
 <div class="relative min-h-screen overflow-hidden bg-portfolio-bg text-portfolio-text transition-colors duration-500">
 
+  <!-- 🌧️ Chuva Matrix - Fica por trás de tudo -->
+  @if (themeService.currentTheme() === 'matrix') {
+    <app-matrix-rain />
+  }
+
   <div class="matrix-bg"></div>
 
   <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px]
@@ -38,42 +43,42 @@
 
           <mat-menu #themeMenu="matMenu" panelClass="custom-theme-menu">
 
-            <div class="menu-header border-b border-portfolio-border/20 block w-full">
-              <span class="text-[10px] uppercase tracking-widest font-bold text-portfolio-primary/70 block">Escolha o Tema</span>
+            <div class="menu-header block w-full">
+              <span class="text-[10px] uppercase tracking-widest font-bold block">Escolha o Tema</span>
             </div>
 
             <button mat-menu-item (click)="themeService.setTheme('light')" class="w-full">
-              <div class="flex items-center justify-between w-full gap-2">
-                <div class="flex items-center gap-3">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center gap-2.5">
                   <mat-icon>light_mode</mat-icon>
-                  <span class="font-medium">Claro Boho</span>
+                  <span class="font-medium">Light mode</span>
                 </div>
                 @if (themeService.currentTheme() === 'light') {
-                  <mat-icon class="!text-[16px] !w-[16px] !h-[16px] !m-0">check</mat-icon>
+                  <mat-icon class="check-icon">check</mat-icon>
                 }
               </div>
             </button>
 
             <button mat-menu-item (click)="themeService.setTheme('dark')" class="w-full">
-              <div class="flex items-center justify-between w-full gap-2">
-                <div class="flex items-center gap-3">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center gap-2.5">
                   <mat-icon>dark_mode</mat-icon>
-                  <span class="font-medium">Escuro Terroso</span>
+                  <span class="font-medium">Dark mode</span>
                 </div>
                 @if (themeService.currentTheme() === 'dark') {
-                  <mat-icon class="!text-[16px] !w-[16px] !h-[16px] !m-0">check</mat-icon>
+                  <mat-icon class="check-icon">check</mat-icon>
                 }
               </div>
             </button>
 
             <button mat-menu-item (click)="themeService.setTheme('matrix')" class="w-full">
-              <div class="flex items-center justify-between w-full gap-2">
-                <div class="flex items-center gap-3">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center gap-2.5">
                   <mat-icon>terminal</mat-icon>
-                  <span class="font-medium">Matrix Mode</span>
+                  <span class="font-medium">Matrix mode</span>
                 </div>
                 @if (themeService.currentTheme() === 'matrix') {
-                  <mat-icon class="!text-[16px] !w-[16px] !h-[16px] !m-0">check</mat-icon>
+                  <mat-icon class="check-icon">check</mat-icon>
                 }
               </div>
             </button>
@@ -95,7 +100,7 @@
         </p>
         <div class="flex items-center gap-5 text-sm">
           <a href="https://github.com/lexmoraes" target="_blank" class="text-portfolio-text/70 hover:text-portfolio-primary transition-colors">GitHub</a>
-          <a href="#" class="text-portfolio-text/70 hover:text-portfolio-primary transition-colors">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/lexmoraes" target="_blank" class="text-portfolio-text/70 hover:text-portfolio-primary transition-colors">LinkedIn</a>
         </div>
       </div>
     </footer>
