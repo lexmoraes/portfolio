@@ -29,7 +29,7 @@ export class AboutComponent {
         'Atuação em projetos corporativos utilizando Angular, Django REST Framework, PostgreSQL, WebSocket, Celery + Redis e integração com APIs externas. Desenvolvimento de soluções voltadas para gestão ágil, processos financeiros internos e aplicações escaláveis.'
     },
     {
-      year: '2025',
+      year: '2026',
       title: 'Publicação Científica na UFSM',
       institution: 'Universidade Federal de Santa Maria (UFSM)',
       description:

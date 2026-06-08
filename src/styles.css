@@ -1,16 +1,175 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+/* 🎨 1. O CORAÇÃO DOS TEMAS: MAPEAMENTO DO TAILWIND 4 */
+@theme {
+  --color-portfolio-bg: var(--bg-page);
+  --color-portfolio-card: var(--bg-card);
+  --color-portfolio-border: var(--border-color);
+  --color-portfolio-text: var(--text-body);
+  --color-portfolio-heading: var(--text-heading);
+  --color-portfolio-primary: var(--primary-color);
+}
+
+/* 🟢 ESTADO 1: CLARO BOHO (PADRÃO) */
+:root, html, html.light {
+  --bg-page: #E0D3BA;
+  --bg-card: #DCCBA4;
+  --border-color: #D9BE98;
+  --text-body: #5A4F4A;
+  --text-heading: #1A1513;
+  --primary-color: #AC6D35;
+}
+
+/* 🟤 ESTADO 2: ESCURO TERROSO (DARK) */
+html.dark {
+  --bg-page: #12100E;
+  --bg-card: #1A1714;
+  --border-color: #2C2523;
+  --text-body: #C5BAA2;
+  --text-heading: #FFFFFF;
+  --primary-color: #CEB07D;
+}
+
+/* 🟢 ESTADO 3: MATRIX MODE */
+html.matrix {
+  --bg-page: #000000;
+  --bg-card: #050505;
+  --border-color: #317e31;
+  --text-body: #c3c3c3;
+  --text-heading: #c3c3c3;
+  --primary-color: #1a981a;
+}
+
+/* 🛠️ 2. RESETS E CONFIGURAÇÕES GLOBAIS */
 html, body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #E0D3BA;
-  color: #2C2523;
+  background-color: var(--bg-page);
+  color: var(--text-body);
   min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+html.matrix, html.matrix body {
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+.matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+html.matrix .matrix-bg {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  opacity: 0.18;
+  pointer-events: none;
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
+  repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.15) 0px, rgba(0, 255, 0, 0.15) 1px, transparent 1px, transparent 10px);
+  animation: matrixMove 20s linear infinite;
+}
+
+@keyframes matrixMove {
+  from { background-position: 0 0; }
+  to { background-position: 0 1000px; }
+}
+
+/* ==========================================================================
+   🚨 CONTROLE ULTRACALIBRADO DO MENU (SLIM, SIMÉTRICO E CENTRALIZADO)
+   ========================================================================== */
+
+/* 1. O Container do Overlay (Proporcional ao texto e com bordas suaves) */
+div.mat-mdc-menu-panel.custom-theme-menu {
+  background-color: #DCCBA4 !important; /* Fundo fixo Claro Boho */
+  border: 1px solid #D9BE98 !important; /* Borda fixa Claro Boho */
+  box-shadow: 0 10px 20px rgba(26, 21, 19, 0.15) !important;
+  border-radius: 16px !important; /* Raio reduzido para harmonizar com o tamanho menor */
+  overflow: hidden !important;
+
+  /* 📐 Largura Slim Perfeita: Nem apertado, nem gigante */
+  width: 175px !important;
+  min-width: 175px !important;
+  max-width: 175px !important;
+}
+
+/* 2. Alinhamento da lista interna (Remove espaçamentos fantasmas) */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  padding: 6px !important; /* Respiro perfeito entre as bordas do menu e os botões */
+  margin: 0 !important;
+}
+
+/* 3. O Cabeçalho ("Escolha o Tema") perfeitamente alinhado */
+div.mat-mdc-menu-panel.custom-theme-menu .menu-header {
+  padding: 6px 12px 6px 12px !important;
+  margin-bottom: 4px !important;
+  border-bottom: 1px solid rgba(172, 109, 53, 0.15) !important;
+}
+div.mat-mdc-menu-panel.custom-theme-menu .menu-header span {
+  color: #AC6D35 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* 4. Os Botões (Itens da Lista) com distribuição simétrica */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item {
+  /* 🌟 Paddings laterais idênticos para afastar os ícones das bordas com elegância */
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  height: 38px !important; /* Altura mais compacta e proporcional */
+  min-height: 38px !important;
+  border-radius: 10px !important;
+  margin: 2px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* 5. Trava de fontes e cores internas (MDC Overrides) */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item,
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item .mdc-list-item__label,
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item span {
+  color: #1A1513 !important; /* Texto escuro do Claro Boho permanente */
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+/* Hover sutil */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item:hover {
+  background-color: rgba(172, 109, 53, 0.12) !important;
+  background-image: none !important;
+}
+
+/* 6. Redimensionamento dos Ícones (Essencial para não estourar o layout) */
+div.mat-mdc-menu-panel.custom-theme-menu .mat-icon {
+  color: #AC6D35 !important;
+  font-size: 18px !important; /* Reduzido de 24px para 18px para ficar delicado e simétrico */
+  width: 18px !important;
+  height: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+/* Tamanho exclusivo para o ícone de Check ficar discreto na direita */
+div.mat-mdc-menu-panel.custom-theme-menu .check-icon {
+  font-size: 15px !important;
+  width: 15px !important;
+  height: 15px !important;
 }

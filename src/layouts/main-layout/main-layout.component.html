@@ -1,32 +1,89 @@
-<div class="relative min-h-screen overflow-hidden bg-boho-bg text-boho-text">
+<div class="relative min-h-screen overflow-hidden bg-portfolio-bg text-portfolio-text transition-colors duration-500">
+
+  <!-- 🌧️ Chuva Matrix - Fica por trás de tudo -->
+  @if (themeService.currentTheme() === 'matrix') {
+    <app-matrix-rain />
+  }
+
+  <div class="matrix-bg"></div>
 
   <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px]
-              bg-boho-primary/10 blur-3xl rounded-full pointer-events-none">
+              bg-portfolio-primary/10 blur-3xl rounded-full pointer-events-none transition-colors duration-500">
   </div>
 
   <div id="tsparticles" class="absolute inset-0 -z-10 opacity-30"></div>
 
   <div class="flex flex-col min-h-screen relative z-10">
 
-    <header class="sticky top-0 z-50 border-b border-white/5 backdrop-blur-xl bg-boho-bg/70">
+    <header class="sticky top-0 z-50 border-b border-portfolio-border/20 backdrop-blur-xl bg-portfolio-bg/70 transition-colors duration-500">
       <nav class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
 
-        <a href="#hero" class="text-2xl font-black tracking-tight text-boho-heading">
-          Alexsandro<span class="text-boho-primary">.</span>
+        <a href="#hero" class="text-2xl font-black tracking-tight text-portfolio-heading">
+          Alexsandro<span class="text-portfolio-primary">.</span>
         </a>
 
-        <div class="flex items-center gap-8 text-sm font-medium text-boho-muted">
-          <a href="#hero" class="hover:text-boho-heading transition-all duration-300">
+        <div class="flex items-center gap-8 text-sm font-medium">
+          <a href="#hero" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300">
             Início
           </a>
 
-          <a href="#projects" class="hover:text-boho-heading transition-all duration-300">
+          <a href="#projects" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300">
             Projetos
           </a>
 
-          <a href="#about" class="hover:text-boho-heading transition-all duration-300">
+          <a href="#about" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300">
             Sobre
           </a>
+
+          <button [matMenuTriggerFor]="themeMenu"
+                  mat-icon-button
+                  class="!text-portfolio-primary hover:scale-110 transition-all duration-300">
+            <mat-icon>palette</mat-icon>
+          </button>
+
+          <mat-menu #themeMenu="matMenu" panelClass="custom-theme-menu">
+
+            <div class="menu-header block w-full">
+              <span class="text-[10px] uppercase tracking-widest font-bold block">Escolha o Tema</span>
+            </div>
+
+            <button mat-menu-item (click)="themeService.setTheme('light')" class="w-full">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center gap-2.5">
+                  <mat-icon>light_mode</mat-icon>
+                  <span class="font-medium">Light mode</span>
+                </div>
+                @if (themeService.currentTheme() === 'light') {
+                  <mat-icon class="check-icon">check</mat-icon>
+                }
+              </div>
+            </button>
+
+            <button mat-menu-item (click)="themeService.setTheme('dark')" class="w-full">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center gap-2.5">
+                  <mat-icon>dark_mode</mat-icon>
+                  <span class="font-medium">Dark mode</span>
+                </div>
+                @if (themeService.currentTheme() === 'dark') {
+                  <mat-icon class="check-icon">check</mat-icon>
+                }
+              </div>
+            </button>
+
+            <button mat-menu-item (click)="themeService.setTheme('matrix')" class="w-full">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center gap-2.5">
+                  <mat-icon>terminal</mat-icon>
+                  <span class="font-medium">Matrix mode</span>
+                </div>
+                @if (themeService.currentTheme() === 'matrix') {
+                  <mat-icon class="check-icon">check</mat-icon>
+                }
+              </div>
+            </button>
+
+          </mat-menu>
         </div>
 
       </nav>
@@ -36,14 +93,14 @@
       <router-outlet></router-outlet>
     </main>
 
-    <footer class="border-t border-white/5 bg-black/5 backdrop-blur-lg">
+    <footer class="border-t border-portfolio-border/20 bg-portfolio-card/10 backdrop-blur-lg transition-colors duration-500">
       <div class="max-w-7xl mx-auto px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-sm text-boho-muted">
+        <p class="text-sm text-portfolio-text/70">
           © 2026 Alexsandro Moraes
         </p>
         <div class="flex items-center gap-5 text-sm">
-          <a href="#" class="hover:text-boho-primary transition-colors">GitHub</a>
-          <a href="#" class="hover:text-boho-primary transition-colors">LinkedIn</a>
+          <a href="https://github.com/lexmoraes" target="_blank" class="text-portfolio-text/70 hover:text-portfolio-primary transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/lexmoraes" target="_blank" class="text-portfolio-text/70 hover:text-portfolio-primary transition-colors">LinkedIn</a>
         </div>
       </div>
     </footer>

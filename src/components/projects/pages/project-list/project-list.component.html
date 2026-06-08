@@ -1,33 +1,33 @@
-<section class="relative py-28 overflow-hidden bg-boho-bg text-boho-text">
+<section class="relative py-28 overflow-hidden bg-portfolio-bg text-portfolio-text transition-colors duration-500">
 
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#B68E52]/10 blur-3xl rounded-full mix-blend-multiply pointer-events-none"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-portfolio-primary/5 blur-3xl rounded-full mix-blend-multiply pointer-events-none transition-colors duration-500"></div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-8">
 
     <div class="max-w-4xl mb-20">
-      <span class="text-sm uppercase tracking-[0.3em] text-boho-primary block font-semibold">Portfolio</span>
-      <h1 class="mt-6 text-5xl md:text-7xl font-black leading-tight text-boho-heading">
-        Projetos que unem <span class="text-boho-primary">arquitetura,</span> performance e experience.
+      <span class="text-sm uppercase tracking-[0.3em] text-portfolio-primary block font-semibold transition-colors duration-500">Portfolio</span>
+      <h1 class="mt-6 text-5xl md:text-7xl font-black leading-tight text-portfolio-heading transition-colors duration-500">
+        Projetos que unem <span class="text-portfolio-primary">arquitetura,</span> performance e experiência.
       </h1>
-      <p class="mt-8 text-lg text-boho-muted leading-relaxed max-w-2xl font-light">
+      <p class="mt-8 text-lg text-portfolio-text/80 leading-relaxed max-w-2xl font-light transition-colors duration-500">
         Aplicações desenvolvidas com foco em escalabilidade, experiência do usuário e interfaces modernas utilizando Angular, Django e tecnologias modernas do ecossistema web.
       </p>
     </div>
 
     @if (featuredProject(); as featured) {
-      <div class="mb-20 rounded-3xl overflow-hidden border border-[#D9BE98] bg-[#DCCBA4] shadow-[0_10px_30px_rgba(44,37,35,0.06)]">
+      <div class="mb-20 rounded-3xl overflow-hidden border border-portfolio-border bg-portfolio-card shadow-[0_10px_30px_rgba(44,37,35,0.06)] transition-all duration-500">
         <div class="grid lg:grid-cols-2 gap-10">
           <div class="relative min-h-[400px] bg-black/5">
             <img [src]="featured.imageUrl" alt="" class="w-full h-full object-cover">
           </div>
           <div class="p-10 flex flex-col justify-center">
-            <span class="text-sm uppercase tracking-[0.3em] text-boho-primary font-semibold">Projeto Destaque</span>
-            <h2 class="mt-4 text-4xl font-black text-boho-heading">{{ featured.title }}</h2>
-            <p class="mt-6 text-boho-muted leading-relaxed font-light">{{ featured.description }}</p>
+            <span class="text-sm uppercase tracking-[0.3em] text-portfolio-primary font-semibold transition-colors duration-500">Projeto Destaque</span>
+            <h2 class="mt-4 text-4xl font-black text-portfolio-heading transition-colors duration-500">{{ featured.title }}</h2>
+            <p class="mt-6 text-portfolio-text/90 leading-relaxed font-light transition-colors duration-500">{{ featured.description }}</p>
 
             <div class="flex flex-wrap gap-2 mt-8">
               @for (tech of featured.technologies; track tech) {
-                <span class="px-3 py-1 rounded-full text-xs bg-[#E0D3BA] border border-[#D9BE98] text-boho-heading font-medium">
+                <span class="px-3 py-1 rounded-full text-xs bg-portfolio-bg border border-portfolio-border text-portfolio-heading font-medium transition-all duration-500">
                   {{ tech }}
                 </span>
               }
@@ -35,33 +35,29 @@
 
             <div class="flex flex-wrap gap-4 mt-10">
               @if (featured.deployUrl) {
-                <a [href]="featured.deployUrl"
-                   target="_blank"
-                   class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
+                <a [href]="featured.deployUrl" target="_blank"
+                   class="px-6 py-3 rounded-xl border border-portfolio-primary bg-transparent text-portfolio-primary hover:opacity-80 font-medium shadow-sm transition-all duration-300 text-center">
                   Acesse aqui
                 </a>
               }
 
               @if(featured.scientificArticle){
-                <a [href]="featured.scientificArticle"
-                   target="_blank"
-                   class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
-                Artigo completo
+                <a [href]="featured.scientificArticle" target="_blank"
+                   class="px-6 py-3 rounded-xl border border-portfolio-primary bg-transparent text-portfolio-primary hover:opacity-80 font-medium shadow-sm transition-all duration-300 text-center">
+                  Artigo completo
                 </a>
               }
 
               @if (featured.gitFrontendUrl) {
-                <a [href]="featured.gitFrontendUrl"
-                   target="_blank"
-                   class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
+                <a [href]="featured.gitFrontendUrl" target="_blank"
+                   class="px-6 py-3 rounded-xl border border-portfolio-primary bg-transparent text-portfolio-primary hover:opacity-80 font-medium shadow-sm transition-all duration-300 text-center">
                   Git frontend
                 </a>
               }
 
               @if (featured.gitBackendUrl) {
-                <a [href]="featured.gitBackendUrl"
-                   target="_blank"
-                   class="px-6 py-3 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] font-medium shadow-sm transition-colors duration-300 text-center">
+                <a [href]="featured.gitBackendUrl" target="_blank"
+                   class="px-6 py-3 rounded-xl border border-portfolio-primary bg-transparent text-portfolio-primary hover:opacity-80 font-medium shadow-sm transition-all duration-300 text-center">
                   Git backend
                 </a>
               }
@@ -73,20 +69,20 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       @for (project of allProjects(); track project.id) {
-        <div class="group rounded-2xl overflow-hidden border border-[#D9BE98] bg-[#DCCBA4] hover:-translate-y-2 hover:border-boho-primary/50 shadow-[0_10px_25px_rgba(44,37,35,0.04)] hover:shadow-[0_20px_40px_rgba(44,37,35,0.08)] transition-all duration-500 flex flex-col justify-between">
+        <div class="group rounded-2xl overflow-hidden border border-portfolio-border bg-portfolio-card hover:-translate-y-2 hover:border-portfolio-primary/50 shadow-[0_10px_25px_rgba(44,37,35,0.04)] hover:shadow-[0_20px_40px_rgba(44,37,35,0.08)] transition-all duration-500 flex flex-col justify-between">
 
           <div>
             <div class="h-64 overflow-hidden bg-black/5">
               <img [src]="project.imageUrl" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             </div>
             <div class="p-6 pb-0">
-              <span class="text-xs uppercase tracking-widest text-boho-primary font-semibold">{{ project.subtitle }}</span>
-              <h3 class="mt-3 text-2xl font-bold text-boho-heading">{{ project.title }}</h3>
-              <p class="mt-4 text-sm leading-relaxed text-boho-muted font-light">{{ project.description }}</p>
+              <span class="text-xs uppercase tracking-widest text-portfolio-primary font-semibold transition-colors duration-500">{{ project.subtitle }}</span>
+              <h3 class="mt-3 text-2xl font-bold text-portfolio-heading transition-colors duration-500">{{ project.title }}</h3>
+              <p class="mt-4 text-sm leading-relaxed text-portfolio-text/90 font-light transition-colors duration-500">{{ project.description }}</p>
 
               <div class="flex flex-wrap gap-2 mt-6">
                 @for (tech of project.technologies; track tech) {
-                  <span class="px-3 py-1 rounded-full text-xs bg-[#E0D3BA] border border-[#D9BE98]">
+                  <span class="px-3 py-1 rounded-full text-xs bg-portfolio-bg border border-portfolio-border text-portfolio-text transition-all duration-500">
                     {{ tech }}
                   </span>
                 }
@@ -95,35 +91,31 @@
           </div>
 
           <div class="p-6">
-            <div class="flex flex-wrap gap-3 border-t border-[#D9BE98]/40 pt-5 w-full">
+            <div class="flex flex-wrap gap-3 border-t border-portfolio-border/40 pt-5 w-full transition-colors duration-500">
               @if(project.deployUrl){
-                <a [href]="project.deployUrl"
-                   target="_blank"
-                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] text-sm font-medium text-center transition-colors duration-300">
+                <a [href]="project.deployUrl" target="_blank"
+                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-portfolio-primary bg-transparent text-portfolio-primary hover:opacity-80 text-sm font-medium text-center transition-all duration-300">
                   Acesse aqui
                 </a>
               }
 
               @if(project.scientificArticle){
-                <a [href]="project.scientificArticle"
-                   target="_blank"
-                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] text-sm font-medium text-center transition-colors duration-300">
+                <a [href]="project.scientificArticle" target="_blank"
+                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-portfolio-primary bg-transparent text-portfolio-primary hover:opacity-80 text-sm font-medium text-center transition-all duration-300">
                   Artigo
                 </a>
               }
 
               @if(project.gitFrontendUrl){
-                <a [href]="project.gitFrontendUrl"
-                   target="_blank"
-                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] text-sm font-medium text-center transition-colors duration-300">
+                <a [href]="project.gitFrontendUrl" target="_blank"
+                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-portfolio-primary bg-transparent text-portfolio-primary hover:opacity-80 text-sm font-medium text-center transition-all duration-300">
                   Git frontend
                 </a>
               }
 
               @if(project.gitBackendUrl){
-                <a [href]="project.gitBackendUrl"
-                   target="_blank"
-                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-boho-primary bg-transparent text-boho-primary hover:text-[#B87B41] hover:border-[#B87B41] text-sm font-medium text-center transition-colors duration-300">
+                <a [href]="project.gitBackendUrl" target="_blank"
+                   class="flex-1 min-w-[120px] px-4 py-2.5 rounded-xl border border-portfolio-primary bg-transparent text-portfolio-primary hover:opacity-80 text-sm font-medium text-center transition-all duration-300">
                   Git backend
                 </a>
               }
