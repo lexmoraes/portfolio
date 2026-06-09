@@ -1,39 +1,194 @@
-/* 📝 Estilos dedicados para a renderização limpa do PDF */
+/* 📝 Estilos CSS */
 .container-cv {
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
   background-color: #ffffff !important;
-  padding: 30px;
+  padding: 40px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12pt;
+  font-size: 10.5pt;
   line-height: 1.5;
-  color: #222222 !important;
+  color: #333333 !important;
 }
 
-.container-cv h1,
-.container-cv h2,
+/* Classe utilitária para forçar a quebra no PDF */
+.page-break {
+  display: block;
+  page-break-before: always;
+  break-before: page;
+}
+
+/* Cabeçalho */
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.header-info h1 {
+  font-size: 26pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #111111 !important;
+  margin: 0 0 5px 0;
+  letter-spacing: -0.5px;
+}
+
+.job-title {
+  font-size: 13pt;
+  color: #0073e6 !important;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  font-size: 9pt;
+  color: #555555 !important;
+}
+
+.contact-details a {
+  color: #555555 !important;
+  text-decoration: none;
+}
+
+.contact-details .icon {
+  font-style: normal;
+  margin-right: 2px;
+}
+
+/* Grid de Duas Colunas */
+.cv-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+}
+
+/* Títulos das Seções */
+.container-cv h2 {
+  font-size: 12pt;
+  text-transform: uppercase;
+  color: #111111 !important;
+  border-bottom: 2px solid #222222 !important;
+  padding-bottom: 4px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+/* Itens de Experiência e Educação */
+.exp-item, .edu-item, .project-item {
+  margin-bottom: 20px;
+}
+
 .container-cv h3 {
+  font-size: 11pt;
+  color: #111111 !important;
+  font-weight: 700;
+  margin: 0 0 3px 0;
+}
+
+.company {
+  font-size: 10.5pt;
+  color: #0073e6 !important;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.date {
+  font-size: 9pt;
+  color: #666666 !important;
+  margin-bottom: 8px;
+}
+
+.container-cv ul {
+  margin: 5px 0 5px 18px;
+  padding: 0;
+}
+
+.container-cv li {
   margin-bottom: 5px;
-  margin-top: 20px;
-  color: #1f3d7a !important;
+  color: #444444 !important;
 }
 
-.container-cv h1 { font-size: 24pt; }
-.container-cv h2 { font-size: 16pt; border-bottom: 2px solid #1f3d7a; padding-bottom: 5px;}
-.container-cv h3 { font-size: 14pt; color: #333333 !important; margin-top: 10px;}
-.container-cv p { margin: 5px 0; }
-.container-cv ul { margin: 5px 0 5px 20px; }
-.container-cv a { color: #1f3d7a !important; text-decoration: none; }
-.container-cv .section { margin-top: 20px; }
-
-.container-cv .highlight {
-  激font-weight: bold;
-  color: #1f3d7a !important;
+/* Habilidades em Linha */
+.skill-line {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #333333 !important;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e5e7eb !important;
+  margin-bottom: 8px;
 }
 
-.container-cv .resume-summary {
-  background-color: #e6f0ff !important;
-  padding: 10px;
-  border-left: 4px solid #1f3d7a !important;
-  margin-bottom: 10px;
+/* Habilidades em Tags (Ajustado para centralização perfeita) */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 15px;
+}
+
+.skills-tags span {
+  font-size: 9pt;
+  background-color: #eff6ff !important;
+  color: #1e40af !important;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1 !important;
+}
+
+/* Projetos Lateral */
+.project-item p {
+  font-size: 9.5pt;
+  color: #555555 !important;
+  margin: 3px 0 0 0;
+}
+
+/* Idiomas */
+.lang-item {
+  margin-bottom: 12px;
+}
+
+.lang-name {
+  font-size: 10pt;
+  font-weight: 600;
+  color: #333333 !important;
+  margin-bottom: 4px;
+}
+
+.lang-level {
+  font-weight: normal;
+  font-size: 9pt;
+  color: #777777 !important;
+  margin-left: 5px;
+}
+
+.lang-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #e5e7eb !important;
+  display: inline-block;
+}
+
+.dot.filled {
+  background-color: #0073e6 !important;
+}
+
+@media print {
+  .container-cv { padding: 20px; }
+  .cv-content { gap: 30px; }
 }
