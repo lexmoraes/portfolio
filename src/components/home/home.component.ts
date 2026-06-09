@@ -7,13 +7,14 @@ import { MOCK_PROJECTS } from '../../core/mocks/projects-mocks';
 import { ProjectListComponent } from '../projects/pages/project-list/project-list.component';
 import { AboutComponent } from '../about/about.component';
 import { ThemeService } from '../../shared/services/theme.service';
+import { ResumeComponent } from '../resume/resume.component';
 
 declare const AOS: any;
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, ProjectListComponent, AboutComponent],
+  imports: [CommonModule, MatButtonModule, MatIconModule, ProjectListComponent, AboutComponent, ResumeComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

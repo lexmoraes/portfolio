@@ -1,6 +1,5 @@
 <div class="relative min-h-screen overflow-hidden bg-portfolio-bg text-portfolio-text transition-colors duration-500">
 
-  <!-- 🌧️ Chuva Matrix - Fica por trás de tudo -->
   @if (themeService.currentTheme() === 'matrix') {
     <app-matrix-rain />
   }
@@ -16,28 +15,20 @@
   <div class="flex flex-col min-h-screen relative z-10">
 
     <header class="sticky top-0 z-50 border-b border-portfolio-border/20 backdrop-blur-xl bg-portfolio-bg/70 transition-colors duration-500">
-      <nav class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-2">
 
-        <a href="#hero" class="text-2xl font-black tracking-tight text-portfolio-heading">
+        <a href="#hero" class="text-lg sm:text-2xl font-black tracking-tight text-portfolio-heading flex-shrink-0">
           Alexsandro<span class="text-portfolio-primary">.</span>
         </a>
 
-        <div class="flex items-center gap-8 text-sm font-medium">
-          <a href="#hero" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300">
-            Início
-          </a>
-
-          <a href="#projects" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300">
-            Projetos
-          </a>
-
-          <a href="#about" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300">
-            Sobre
-          </a>
+        <div class="flex items-center gap-2.5 sm:gap-6 md:gap-8 text-xs sm:text-sm font-medium">
+          <a href="#hero" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Início</a>
+          <a href="#projects" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Projetos</a>
+          <a href="#about" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Sobre</a>
 
           <button [matMenuTriggerFor]="themeMenu"
                   mat-icon-button
-                  class="!text-portfolio-primary hover:scale-110 transition-all duration-300">
+                  class="!text-portfolio-primary hover:scale-110 transition-all duration-300 flex-shrink-0">
             <mat-icon>palette</mat-icon>
           </button>
 
@@ -94,7 +85,7 @@
     </main>
 
     <footer class="border-t border-portfolio-border/20 bg-portfolio-card/10 backdrop-blur-lg transition-colors duration-500">
-      <div class="max-w-7xl mx-auto px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="text-sm text-portfolio-text/70">
           © 2026 Alexsandro Moraes
         </p>

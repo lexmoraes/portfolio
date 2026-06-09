@@ -1,0 +1,9 @@
+<button (click)="downloadPDF()"
+        class="px-6 rounded-xl border border-portfolio-primary bg-portfolio-primary/10 text-portfolio-primary hover:bg-portfolio-primary/20 font-medium shadow-sm transition-all duration-300 text-center flex items-center justify-center gap-2 cursor-pointer !h-12 w-full">
+  <mat-icon class="!w-5 !h-5 !text-[20px]">download</mat-icon>
+  <span>Baixar CV</span>
+</button>
+
+<div class="absolute left-[-9999px] top-[-9999px]">
+  <app-resume-view #resumeTemplate></app-resume-view>
+</div>

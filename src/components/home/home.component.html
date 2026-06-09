@@ -14,16 +14,21 @@
         Desenvolvedor de Software focado em criar aplicações escaláveis, performáticas e com experiências de usabilidade e visuais de alto impacto.
       </p>
 
-      <div class="mt-10 flex gap-4" data-aos="zoom-in" data-aos-delay="400">
+      HTML
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 w-full" data-aos="zoom-in" data-aos-delay="400">
+
         <a href="#projects" mat-raised-button
-           class="!bg-portfolio-primary !text-portfolio-bg hover:opacity-90 !px-8 !py-6 !rounded-xl !font-medium !shadow-md transition-all duration-300 flex items-center justify-center">
+           class="!bg-portfolio-primary !text-portfolio-bg hover:opacity-90 !px-6 !rounded-xl !font-medium !shadow-md transition-all duration-300 flex items-center justify-center !h-12 w-full sm:w-auto flex-shrink-0">
           Ver Projetos
         </a>
 
-        <a href="#about" mat-stroke-button
-           class="px-6 py-3 rounded-xl border border-portfolio-primary bg-transparent text-portfolio-primary hover:bg-portfolio-primary/10 font-medium shadow-sm transition-all duration-300 text-center">
+        <app-resume class="w-full sm:w-auto block flex-shrink-0"></app-resume>
+
+        <a href="#about"
+           class="px-6 rounded-xl border border-portfolio-primary bg-portfolio-primary/10 text-portfolio-primary hover:bg-portfolio-primary/20 font-medium shadow-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer !h-12 w-full sm:w-auto flex-shrink-0">
           Entrar em contato
         </a>
+
       </div>
     </div>
 
