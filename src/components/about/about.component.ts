@@ -57,6 +57,13 @@ export class AboutComponent {
         'Formação técnica com foco em desenvolvimento web moderno, programação orientada a objetos, frontend com Angular e backend utilizando Django REST Framework.'
     },
     {
+      year: '2017 - 2021 (trancado)',
+      title: 'Licenciatura em Física, Pesquisa e Extensão',
+      institution: 'Universidade Federal do Amazonas (UFAM)',
+      description:
+        'Formação em Física com atuação como bolsista de iniciação científica e professor voluntário do Projeto Cosmos, desenvolvendo atividades de pesquisa, ensino e divulgação científica.'
+    },
+    {
       year: '2016',
       title: 'Premiação em Tecnologia Assistiva',
       institution: 'FEBRACE / USP',

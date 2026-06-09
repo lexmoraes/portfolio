@@ -12,5 +12,6 @@ export interface Project {
   aosAnimation?: string;
   iframeUrl?: string;
   scientificArticle?: string;
-  corporate?: boolean
+  corporate?: boolean;
+  company?: string;
 }

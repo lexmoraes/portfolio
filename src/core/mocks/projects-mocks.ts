@@ -22,7 +22,9 @@ export const MOCK_PROJECTS: Project[] = [
     deployUrl: 'https://planit.fpf.br',
     imageUrl: 'assets/images/projects/planit.jpg',
     featured: true,
-    aosAnimation: 'fade-up'
+    aosAnimation: 'fade-up',
+    corporate: true,
+    company: 'FPFtech'
   },
 
   {
@@ -44,7 +46,8 @@ export const MOCK_PROJECTS: Project[] = [
     gitBackendUrl: 'https://github.com/antonio-pss/bit-academy-back',
     imageUrl: 'assets/images/projects/bit-academy.jpg',
     featured: true,
-    aosAnimation: 'fade-right'
+    aosAnimation: 'fade-right',
+    corporate: false
   },
 
   {
@@ -64,7 +67,8 @@ export const MOCK_PROJECTS: Project[] = [
     gitFrontendUrl: 'https://github.com/lexmoraes',
     imageUrl: 'assets/images/projects/bit-debugger.jpg',
     featured: false,
-    aosAnimation: 'fade-left'
+    aosAnimation: 'fade-left',
+    corporate: false
   },
 
   {
@@ -88,7 +92,8 @@ export const MOCK_PROJECTS: Project[] = [
     imageUrl: 'assets/images/projects/astrobit.png',
     scientificArticle: 'https://periodicos.ufsm.br/reter/article/view/94680',
     featured: true,
-    aosAnimation: 'fade-up'
+    aosAnimation: 'fade-up',
+    corporate: false
   },
 
   {
@@ -109,6 +114,60 @@ export const MOCK_PROJECTS: Project[] = [
     deployUrl: 'https://lexmoraes.dev',
     imageUrl: 'assets/images/projects/portfolio.png',
     featured: true,
-    aosAnimation: 'fade-right'
+    aosAnimation: 'fade-right',
+    corporate: false
+  },
+
+  {
+    id: '6',
+    title: 'Bit',
+    subtitle: 'Sistema ERP de Gestão Corporativa Integrada',
+    description:
+      'Solução ERP corporativa modular voltada para centralização de processos e automação de fluxos com o uso de Inteligência Artificial. Conta com módulos específicos para Gestão de Talentos (RH), controle operacional/financeiro e agentes de IA integrados com OpenAI para análise inteligente de documentos.',
+    technologies: [
+      'Angular',
+      'TypeScript',
+      'Django',
+      'Django REST',
+      'PostgreSQL',
+      'Redis',
+      'Celery',
+      'WebSocket',
+      'OpenAI (IA)',
+      'MinIO',
+      'Docker'
+    ],
+    deployUrl: 'https://bit.fpf.br/',
+    imageUrl: 'assets/images/projects/bit.png',
+    featured: false,
+    aosAnimation: 'fade-up',
+    corporate: true,
+    company: 'FPFtech'
+  },
+
+  {
+    id: '7',
+    title: 'Nexus',
+    subtitle: 'Plataforma ERP de Planejamento Governamental',
+    description:
+      'Plataforma front-end e back-end moderna voltada para gestão empresarial, controle financeiro corporativo e auditorias. A arquitetura implementa comunicação assíncrona em tempo real e suporte robusto multi-banco para grandes volumes de requisições de compra e prestação de contas.',
+    technologies: [
+      'Angular',
+      'TypeScript',
+      'Django',
+      'Django REST',
+      'PostgreSQL',
+      'SQL Server',
+      'Redis',
+      'Celery',
+      'WebSocket',
+      'Amazon S3',
+      'Docker'
+    ],
+    imageUrl: 'assets/images/projects/without-image.png',
+    featured: false,
+    aosAnimation: 'fade-up',
+    corporate: true,
+    company: 'FPFtech'
   }
 ];

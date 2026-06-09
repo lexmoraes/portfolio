@@ -173,3 +173,18 @@ div.mat-mdc-menu-panel.custom-theme-menu .check-icon {
   width: 15px !important;
   height: 15px !important;
 }
+
+/* ==========================================================================
+   📦 CORREÇÃO DE GAP NO ACCORDION (IMPEDE PAINÉIS DE FICAREM GRUDADOS)
+   ========================================================================== */
+
+/* Força uma margem inferior em cada painel individual dentro do seu accordion */
+.custom-portfolio-accordion .mat-expansion-panel {
+  margin-bottom: 20px !important; /* Tamanho do gap perfeito entre eles */
+  border-radius: 16px !important; /* Garante que as bordas fiquem arredondadas mesmo colapsados */
+}
+
+/* Remove a margem do último elemento para não quebrar o alinhamento com o rodapé */
+.custom-portfolio-accordion .mat-expansion-panel:last-child {
+  margin-bottom: 0 !important;
+}
