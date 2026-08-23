@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* 🎨 1. O CORAÇÃO DOS TEMAS: MAPEAMENTO DO TAILWIND 4 */
 @theme {
@@ -8,183 +8,245 @@
   --color-portfolio-text: var(--text-body);
   --color-portfolio-heading: var(--text-heading);
   --color-portfolio-primary: var(--primary-color);
+
+  --font-sans: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 }
 
 /* 🟢 ESTADO 1: CLARO BOHO (PADRÃO) */
-:root, html, html.light {
-  --bg-page: #E0D3BA;
-  --bg-card: #DCCBA4;
-  --border-color: #D9BE98;
-  --text-body: #5A4F4A;
-  --text-heading: #1A1513;
-  --primary-color: #AC6D35;
+:root,
+html,
+html.light {
+  --bg-page: #e0d3ba;
+  --bg-card: #dccba4;
+  --border-color: #d9be98;
+  --text-body: #5a4f4a;
+  --text-heading: #1a1513;
+  --primary-color: #ac6d35;
 }
 
 /* 🟤 ESTADO 2: ESCURO TERROSO (DARK) */
 html.dark {
-  --bg-page: #12100E;
-  --bg-card: #1A1714;
-  --border-color: #2C2523;
-  --text-body: #C5BAA2;
-  --text-heading: #FFFFFF;
-  --primary-color: #CEB07D;
-}
-
-/* 🟢 ESTADO 3: MATRIX MODE */
-html.matrix {
-  --bg-page: #000000;
-  --bg-card: #050505;
-  --border-color: #317e31;
-  --text-body: #c3c3c3;
-  --text-heading: #c3c3c3;
-  --primary-color: #1a981a;
+  --bg-page: #12100e;
+  --bg-card: #1a1714;
+  --border-color: #2c2523;
+  --text-body: #c5baa2;
+  --text-heading: #ffffff;
+  --primary-color: #ceb07d;
 }
 
 /* 🛠️ 2. RESETS E CONFIGURAÇÕES GLOBAIS */
-html, body {
+html,
+body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--bg-page);
   color: var(--text-body);
   min-height: 100vh;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-html.matrix, html.matrix body {
-  font-family: 'Courier New', Courier, monospace !important;
+/* ==========================================================================
+   🎛️ SELETOR DE TEMA (mat-button-toggle-group)
+   Estilizado com as mesmas variáveis de tema usadas no resto do site — ao
+   contrário do menu antigo, agora acompanha light/dark corretamente em vez
+   de ficar preso a cores fixas do tema claro.
+   ========================================================================== */
+
+.theme-toggle-group.mat-button-toggle-group {
+  --mat-standard-button-toggle-shape: 999px;
+  border-radius: 999px !important;
+  border: 1px solid var(--border-color) !important;
+  background-color: var(--bg-card);
+  padding: 3px;
+  gap: 2px;
+  height: auto;
+  overflow: visible;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
 }
 
-.matrix-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  opacity: 0.5;
+.theme-toggle-group .mat-button-toggle {
+  border-radius: 999px !important;
+  overflow: hidden;
 }
 
-html.matrix .matrix-bg {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10;
-  opacity: 0.18;
-  pointer-events: none;
-  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
-  repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.15) 0px, rgba(0, 255, 0, 0.15) 1px, transparent 1px, transparent 10px);
-  animation: matrixMove 20s linear infinite;
+.theme-toggle-group .mat-button-toggle + .mat-button-toggle {
+  border-left: none !important;
 }
 
-@keyframes matrixMove {
-  from { background-position: 0 0; }
-  to { background-position: 0 1000px; }
+.theme-toggle-group .mat-button-toggle-label-content {
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.theme-toggle-group .mat-button-toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.theme-toggle-group .mat-icon {
+  color: var(--text-body);
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.theme-toggle-group .mat-button-toggle:hover .mat-icon {
+  color: var(--text-heading);
+}
+
+.theme-toggle-group .mat-button-toggle-checked {
+  background-color: var(--primary-color) !important;
+}
+
+.theme-toggle-group .mat-button-toggle-checked .mat-icon {
+  color: var(--bg-page);
 }
 
 /* ==========================================================================
-   🚨 CONTROLE ULTRACALIBRADO DO MENU (SLIM, SIMÉTRICO E CENTRALIZADO)
+   🧩 SISTEMA DE COMPONENTES (botões, badges, segmented control)
+   Um único lugar para essas classes garante consistência visual real entre
+   hero, sobre, projetos e currículo — em vez de repetir strings de utilitário
+   gigantes (e ligeiramente diferentes) em cada template.
    ========================================================================== */
 
-/* 1. O Container do Overlay (Proporcional ao texto e com bordas suaves) */
-div.mat-mdc-menu-panel.custom-theme-menu {
-  background-color: #DCCBA4 !important; /* Fundo fixo Claro Boho */
-  border: 1px solid #D9BE98 !important; /* Borda fixa Claro Boho */
-  box-shadow: 0 10px 20px rgba(26, 21, 19, 0.15) !important;
-  border-radius: 16px !important; /* Raio reduzido para harmonizar com o tamanho menor */
-  overflow: hidden !important;
-
-  /* 📐 Largura Slim Perfeita: Nem apertado, nem gigante */
-  width: 175px !important;
-  min-width: 175px !important;
-  max-width: 175px !important;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 3rem;
+  padding: 0 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
-/* 2. Alinhamento da lista interna (Remove espaçamentos fantasmas) */
-div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-content {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: stretch !important;
-  padding: 6px !important; /* Respiro perfeito entre as bordas do menu e os botões */
-  margin: 0 !important;
+.btn:active {
+  transform: translateY(1px);
 }
 
-/* 3. O Cabeçalho ("Escolha o Tema") perfeitamente alinhado */
-div.mat-mdc-menu-panel.custom-theme-menu .menu-header {
-  padding: 6px 12px 6px 12px !important;
-  margin-bottom: 4px !important;
-  border-bottom: 1px solid rgba(172, 109, 53, 0.15) !important;
-}
-div.mat-mdc-menu-panel.custom-theme-menu .menu-header span {
-  color: #AC6D35 !important;
-  font-size: 10px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.05em !important;
+.btn-sm {
+  height: 2.5rem;
+  padding: 0 1.125rem;
+  border-radius: 0.625rem;
+  font-size: 0.8125rem;
 }
 
-/* 4. Os Botões (Itens da Lista) com distribuição simétrica */
-div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item {
-  /* 🌟 Paddings laterais idênticos para afastar os ícones das bordas com elegância */
-  padding-left: 12px !important;
-  padding-right: 12px !important;
-  height: 38px !important; /* Altura mais compacta e proporcional */
-  min-height: 38px !important;
-  border-radius: 10px !important;
-  margin: 2px 0 !important;
-  display: flex !important;
-  align-items: center !important;
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--bg-page);
 }
 
-/* 5. Trava de fontes e cores internas (MDC Overrides) */
-div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item,
-div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item .mdc-list-item__label,
-div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item span {
-  color: #1A1513 !important; /* Texto escuro do Claro Boho permanente */
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+.btn-primary:hover {
+  opacity: 0.88;
 }
 
-/* Hover sutil */
-div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item:hover {
-  background-color: rgba(172, 109, 53, 0.12) !important;
-  background-image: none !important;
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-heading);
 }
 
-/* 6. Redimensionamento dos Ícones (Essencial para não estourar o layout) */
-div.mat-mdc-menu-panel.custom-theme-menu .mat-icon {
-  color: #AC6D35 !important;
-  font-size: 18px !important; /* Reduzido de 24px para 18px para ficar delicado e simétrico */
-  width: 18px !important;
-  height: 18px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 !important;
+.btn-outline:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
-/* Tamanho exclusivo para o ícone de Check ficar discreto na direita */
-div.mat-mdc-menu-panel.custom-theme-menu .check-icon {
-  font-size: 15px !important;
-  width: 15px !important;
-  height: 15px !important;
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
-/* ==========================================================================
-   📦 CORREÇÃO DE GAP NO ACCORDION (IMPEDE PAINÉIS DE FICAREM GRUDADOS)
-   ========================================================================== */
-
-/* Força uma margem inferior em cada painel individual dentro do seu accordion */
-.custom-portfolio-accordion .mat-expansion-panel {
-  margin-bottom: 20px !important; /* Tamanho do gap perfeito entre eles */
-  border-radius: 16px !important; /* Garante que as bordas fiquem arredondadas mesmo colapsados */
+/* Badge tipo "pill" com indicador de status (usado no hero) */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-body);
 }
 
-/* Remove a margem do último elemento para não quebrar o alinhamento com o rodapé */
-.custom-portfolio-accordion .mat-expansion-panel:last-child {
-  margin-bottom: 0 !important;
+.badge-pill .badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+/* Segmented control (filtro de projetos) — scroll horizontal em telas
+   estreitas para nunca ficar cortado por um `overflow-hidden` do container pai */
+.segmented {
+  display: flex;
+  max-width: 100%;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  gap: 0.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.segmented::-webkit-scrollbar {
+  display: none;
+}
+
+.segmented button {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-body);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  white-space: nowrap;
+}
+
+.segmented button:hover {
+  color: var(--text-heading);
+}
+
+.segmented button.active {
+  background-color: var(--primary-color);
+  color: var(--bg-page);
 }

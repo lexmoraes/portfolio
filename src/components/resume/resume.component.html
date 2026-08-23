@@ -1,10 +1,9 @@
-<button (click)="downloadPDF()"
-        [disabled]="isDownloading()"
-        [class.opacity-60]="isDownloading()"
-        [class.cursor-not-allowed]="isDownloading()"
-        [class.cursor-pointer]="!isDownloading()"
-        class="px-6 rounded-xl border border-portfolio-primary bg-portfolio-primary/10 text-portfolio-primary hover:bg-portfolio-primary/20 font-medium shadow-sm transition-all duration-300 text-center flex items-center justify-center gap-2 !h-12 w-full disabled:hover:bg-portfolio-primary/10 select-none">
-
+<button
+  (click)="downloadPDF()"
+  [disabled]="isDownloading()"
+  [class.cursor-not-allowed]="isDownloading()"
+  class="btn btn-outline w-full select-none"
+>
   @if (isDownloading()) {
     <mat-icon class="!w-5 !h-5 !text-[20px] animate-spin">sync</mat-icon>
     <span>Gerando PDF...</span>

@@ -1,48 +1,52 @@
-<section id="hero" class="relative py-28 overflow-hidden bg-portfolio-bg text-portfolio-text transition-colors duration-500">
-
-  <div class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+<section
+  id="hero"
+  class="relative py-28 overflow-hidden bg-portfolio-bg text-portfolio-text transition-colors duration-500"
+>
+  <div
+    class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10"
+  >
     <div class="flex flex-col items-start text-left max-w-xl">
-      <span class="text-portfolio-primary font-mono text-xs tracking-widest block mb-4 uppercase font-semibold" data-aos="fade-right">
+      <span class="badge-pill">
+        <span class="badge-dot"></span>
         Disponível para novos desafios
       </span>
 
-      <h1 class="hero-title text-5xl md:text-6xl font-extrabold tracking-tight text-portfolio-heading leading-tight transition-colors duration-500">
+      <h1
+        class="hero-title mt-6 text-5xl md:text-7xl font-extrabold tracking-tight text-portfolio-heading leading-[1.05] transition-colors duration-500"
+      >
         Alexsandro Moraes
       </h1>
 
-      <p class="mt-6 text-base md:text-lg text-portfolio-text/90 font-normal leading-relaxed transition-colors duration-500" data-aos="fade-right" data-aos-delay="200">
-        Desenvolvedor de Software focado em criar aplicações escaláveis, performáticas e com experiências de usabilidade e visuais de alto impacto.
+      <p
+        class="mt-6 text-base md:text-lg text-portfolio-text/90 font-normal leading-relaxed transition-colors duration-500"
+      >
+        Desenvolvedor de Software focado em criar aplicações escaláveis, performáticas e com
+        experiências de usabilidade e visuais de alto impacto.
       </p>
 
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 w-full" data-aos="zoom-in" data-aos-delay="400">
-
-        <a href="#projects" mat-raised-button
-           class="!bg-portfolio-primary !text-portfolio-bg hover:opacity-90 !px-6 !rounded-xl !font-medium !shadow-md transition-all duration-300 flex items-center justify-center !h-12 w-full sm:w-auto flex-shrink-0">
-          Ver Projetos
-        </a>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3 w-full">
+        <a href="#projects" class="btn btn-primary w-full sm:w-auto"> Ver Projetos </a>
 
         <app-resume class="w-full sm:w-auto block flex-shrink-0"></app-resume>
 
-        <a href="#about"
-           class="px-6 rounded-xl border border-portfolio-primary bg-portfolio-primary/10 text-portfolio-primary hover:bg-portfolio-primary/20 font-medium shadow-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer !h-12 w-full sm:w-auto flex-shrink-0">
-          Entrar em contato
-        </a>
-
+        <a href="#about" class="btn btn-outline w-full sm:w-auto"> Entrar em contato </a>
       </div>
     </div>
 
-    <div class="flex justify-center items-center relative h-[450px] md:h-[550px]" data-aos="fade-left">
-      <div class="absolute w-[320px] h-[320px] md:w-[420px] md:h-[420px] bg-portfolio-primary opacity-40 animate-pulse-slow
-          rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] transition-all duration-500">
-      </div>
+    <div class="flex justify-center items-center relative h-[420px] md:h-[500px]">
+      <div
+        class="absolute w-[260px] h-[260px] md:w-[340px] md:h-[340px] bg-portfolio-primary/25 blur-[90px] rounded-full transition-all duration-500"
+      ></div>
 
-      <img [src]="themeService.currentTheme() === 'matrix'
-               ? 'assets/images/profile/profile-matrix.jpeg'
-               : themeService.currentTheme() === 'dark'
-                 ? 'assets/images/profile/profile-dark.jpeg'
-                 : 'assets/images/profile/profile-light.jpg'"
-           alt="Alexsandro Moraes"
-           class="relative z-10 w-[280px] md:w-[380px] h-[280px] md:h-[380px] object-cover rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] drop-shadow-[0_10px_20px_rgba(44,37,35,0.15)] border border-portfolio-border/30" />
+      <img
+        [src]="
+          themeService.currentTheme() === 'dark'
+            ? 'assets/images/profile/profile-dark.jpeg'
+            : 'assets/images/profile/profile-light.jpg'
+        "
+        alt="Alexsandro Moraes"
+        class="relative z-10 w-[280px] md:w-[360px] h-[340px] md:h-[440px] object-cover rounded-2xl shadow-2xl border border-portfolio-border/40 transition-colors duration-500"
+      />
     </div>
   </div>
 </section>

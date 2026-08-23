@@ -1,38 +1,35 @@
 import { Component, ElementRef, ViewChild, inject, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
-import { ResumeView } from '../../shared/resume-view/resume-view';
-import { ResumeService } from '../../shared/services/resume.service';
+import { ResumeView } from '../../../../shared/resume-view/resume-view';
+import { ResumeService } from '../../../../shared/services/resume.service';
 
 @Component({
-  selector: 'app-resume',
+  selector: 'app-resume-page',
   standalone: true,
-  templateUrl: './resume.component.html',
+  templateUrl: './resume-page.component.html',
   imports: [ResumeView, MatIcon],
-  styleUrls: ['./resume.component.css'],
 })
-export class ResumeComponent {
+export class ResumePageComponent {
   private platformId = inject(PLATFORM_ID);
   private resumeService = inject(ResumeService);
 
-  // 🌟 Signal para controlar o estado do clique e da animação
   isDownloading = signal<boolean>(false);
 
   @ViewChild('resumeTemplate', { read: ElementRef, static: false }) resumeElement!: ElementRef;
 
   async downloadPDF() {
-    // 🛡️ Proteção extra: Se já estiver baixando, ignora novos cliques
     if (this.isDownloading()) return;
     if (!isPlatformBrowser(this.platformId)) return;
 
-    this.isDownloading.set(true); // Ativa o estado de carregamento
+    this.isDownloading.set(true);
 
     try {
       await this.resumeService.downloadAsPdf(this.resumeElement.nativeElement);
     } catch (error) {
       console.error('Erro ao gerar o currículo:', error);
     } finally {
-      this.isDownloading.set(false); // 🌟 Libera o botão automaticamente quando o download inicia
+      this.isDownloading.set(false);
     }
   }
 }

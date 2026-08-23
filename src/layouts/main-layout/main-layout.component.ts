@@ -1,20 +1,20 @@
-import { Component, signal, inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
-import { ThemeService } from '../../shared/services/theme.service';
-import { MatrixRainComponent } from '../../shared/matrix-rain/matrix-rain.component';
-
-type ThemeMode = 'light' | 'dark' | 'matrix';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ThemeService, ThemeMode } from '../../shared/services/theme.service';
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [MatButtonModule, RouterOutlet, MatIcon, MatMenu, MatMenuTrigger, MatrixRainComponent, MatMenuItem],
-  templateUrl: './main-layout.component.html'
+  imports: [RouterOutlet, MatIcon, MatButtonToggleModule, MatTooltipModule],
+  templateUrl: './main-layout.component.html',
 })
 export class MainLayoutComponent {
   themeService = inject(ThemeService);
+
+  onThemeChange(theme: ThemeMode): void {
+    this.themeService.setTheme(theme);
+  }
 }

@@ -29,8 +29,6 @@ O objetivo é centralizar meus principais projetos, experiências e conquistas a
 - TailwindCSS
 - Angular Material
 - GSAP
-- AOS Animations
-- tsParticles
 
 ---
 

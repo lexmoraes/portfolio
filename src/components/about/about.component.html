@@ -1,78 +1,132 @@
-<section class="py-24 min-h-screen bg-portfolio-bg text-portfolio-text transition-colors duration-500">
+<section class="py-24 md:py-32 bg-portfolio-bg text-portfolio-text transition-colors duration-500">
   <div class="max-w-3xl mx-auto px-6">
-
     <div class="mb-20">
-      <h1 class="text-4xl font-extrabold tracking-tight text-portfolio-heading mb-6 transition-colors duration-500">
-        Sobre Mim
-      </h1>
-      <p class="text-base md:text-lg text-portfolio-text leading-relaxed font-light transition-colors duration-500">
-  Olá! Meu nome é Alexsandro Moraes. Sou desenvolvedor Full Stack com experiência em Angular, Django REST Framework e PostgreSQL, além de atuar com suporte de segundo nível e melhoria de processos de TI. Gosto de transformar problemas complexos em soluções simples, escaláveis e bem estruturadas, unindo desenvolvimento de software, automação e boas práticas de engenharia para entregar aplicações de alta qualidade.
-</p>
+      <span class="badge-pill">
+        <span class="badge-dot"></span>
+        Sobre mim
+      </span>
+      <h2
+        class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight text-portfolio-heading transition-colors duration-500"
+      >
+        Da física à engenharia de software.
+      </h2>
+      <p
+        class="mt-6 text-base md:text-lg text-portfolio-text/90 leading-relaxed font-normal transition-colors duration-500"
+      >
+        Olá! Meu nome é Alexsandro Moraes. Sou desenvolvedor Full Stack com experiência em Angular,
+        Django REST Framework e PostgreSQL, além de atuar com suporte de segundo nível e melhoria de
+        processos de TI. Gosto de transformar problemas complexos em soluções simples, escaláveis e
+        bem estruturadas, unindo desenvolvimento de software, automação e boas práticas de
+        engenharia para entregar aplicações de alta qualidade.
+      </p>
     </div>
 
-    <div class="mb-24 border-t border-portfolio-border/40 pt-16 text-left transition-colors duration-500">
-      <span class="text-xs uppercase tracking-[0.25em] text-portfolio-primary font-bold block mb-4 transition-colors duration-500">
+    <div
+      class="mb-24 border-t border-portfolio-border/40 pt-16 text-left transition-colors duration-500"
+    >
+      <span
+        class="text-xs uppercase tracking-[0.25em] text-portfolio-primary font-bold block mb-4 transition-colors duration-500"
+      >
         Está precisando de um desenvolvedor?
       </span>
 
-      <button (click)="toggleContact()"
-              class="group text-4xl md:text-5xl font-black tracking-tight text-portfolio-heading hover:text-portfolio-primary text-left transition-colors duration-300 focus:outline-none flex items-center gap-3">
+      <button
+        (click)="toggleContact()"
+        class="group text-4xl md:text-5xl font-black tracking-tight text-portfolio-heading hover:text-portfolio-primary text-left transition-colors duration-300 focus:outline-none flex items-center gap-3"
+      >
         Vamos trabalhar juntos?
-        <span class="inline-block transition-transform duration-300 group-hover:translate-x-2 text-portfolio-primary">→</span>
+        <span
+          class="inline-block transition-transform duration-300 group-hover:translate-x-2 text-portfolio-primary"
+          >→</span
+        >
       </button>
 
-      <div [class]="showContact()
-                  ? 'max-h-4xl opacity-100 mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 transition-all duration-500 ease-in-out'
-                  : 'max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out'">
-
-        <a href="https://wa.me/5592984922162?text=Olá,%20Alexsandro!%20Acessei%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade."
-           target="_blank"
-           class="flex items-center justify-between p-5 rounded-2xl bg-portfolio-card border border-portfolio-border hover:border-portfolio-primary group/link transition-all shadow-sm duration-500">
+      <div
+        [class]="
+          showContact()
+            ? 'max-h-4xl opacity-100 mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 transition-all duration-500 ease-in-out'
+            : 'max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out'
+        "
+      >
+        <a
+          href="https://wa.me/5592984922162?text=Olá,%20Alexsandro!%20Acessei%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-between p-5 rounded-2xl bg-portfolio-card/40 border border-portfolio-border hover:border-portfolio-primary group/link transition-all duration-500"
+        >
           <div>
-            <h4 class="font-bold text-portfolio-heading text-sm transition-colors duration-500">Mensagem Direta</h4>
-            <p class="text-xs text-portfolio-text/70 mt-0.5 transition-colors duration-500">Chamar no WhatsApp</p>
+            <h4 class="font-bold text-portfolio-heading text-sm transition-colors duration-500">
+              Mensagem Direta
+            </h4>
+            <p class="text-xs text-portfolio-text/70 mt-0.5 transition-colors duration-500">
+              Chamar no WhatsApp
+            </p>
           </div>
-          <span class="text-portfolio-primary font-bold group-hover/link:translate-x-1 transition-transform">↗</span>
+          <span
+            class="text-portfolio-primary font-bold group-hover/link:translate-x-1 transition-transform"
+            >↗</span
+          >
         </a>
 
-        <a href="mailto:lexfisica@gmail.com?subject=Oportunidade%20de%20Projeto%20-%20Portfólio"
-           class="flex items-center justify-between p-5 rounded-2xl bg-portfolio-card border border-portfolio-border hover:border-portfolio-primary group/link transition-all shadow-sm duration-500">
+        <a
+          href="mailto:lexfisica@gmail.com?subject=Oportunidade%20de%20Projeto%20-%20Portfólio"
+          class="flex items-center justify-between p-5 rounded-2xl bg-portfolio-card/40 border border-portfolio-border hover:border-portfolio-primary group/link transition-all duration-500"
+        >
           <div>
-            <h4 class="font-bold text-portfolio-heading text-sm transition-colors duration-500">E-mail Profissional</h4>
-            <p class="text-xs text-portfolio-text/70 mt-0.5 transition-colors duration-500">lexfisica&#64;gmail.com</p>
+            <h4 class="font-bold text-portfolio-heading text-sm transition-colors duration-500">
+              E-mail Profissional
+            </h4>
+            <p class="text-xs text-portfolio-text/70 mt-0.5 transition-colors duration-500">
+              lexfisica&#64;gmail.com
+            </p>
           </div>
-          <span class="text-portfolio-primary font-bold group-hover/link:translate-x-1 transition-transform">↗</span>
+          <span
+            class="text-portfolio-primary font-bold group-hover/link:translate-x-1 transition-transform"
+            >↗</span
+          >
         </a>
-
       </div>
     </div>
 
     <div>
-      <h2 class="text-2xl font-bold text-portfolio-heading mb-10 transition-colors duration-500">
-        Trajetória & Conquistas
-      </h2>
+      <h3
+        class="text-xs uppercase tracking-[0.25em] text-portfolio-primary font-bold mb-10 transition-colors duration-500"
+      >
+        Trajetória &amp; Conquistas
+      </h3>
 
-      <div class="relative border-l-2 border-portfolio-border ml-4 space-y-12 py-2 transition-colors duration-500">
+      <div
+        class="relative border-l-2 border-portfolio-border ml-4 space-y-12 py-2 transition-colors duration-500"
+      >
         @for (event of history(); track event.title) {
           <div class="relative pl-6">
-            <div class="absolute w-4 h-4 bg-portfolio-primary rounded-full -left-[9px] top-1.5 border-4 border-portfolio-bg shadow-sm transition-all duration-500"></div>
+            <div
+              class="absolute w-4 h-4 bg-portfolio-primary rounded-full -left-[9px] top-1.5 border-4 border-portfolio-bg shadow-sm transition-all duration-500"
+            ></div>
 
-            <span class="text-xs font-mono font-bold text-portfolio-primary uppercase block mb-1 transition-colors duration-500">
+            <span
+              class="text-xs font-mono font-bold text-portfolio-primary uppercase block mb-1 transition-colors duration-500"
+            >
               {{ event.year }}
             </span>
-            <h3 class="text-xl font-bold text-portfolio-heading leading-tight transition-colors duration-500">
+            <h3
+              class="text-xl font-bold text-portfolio-heading leading-tight transition-colors duration-500"
+            >
               {{ event.title }}
             </h3>
-            <span class="text-sm text-portfolio-text/70 block mb-3 font-medium transition-colors duration-500">
+            <span
+              class="text-sm text-portfolio-text/70 block mb-3 font-medium transition-colors duration-500"
+            >
               {{ event.institution }}
             </span>
-            <p class="text-sm text-portfolio-text/80 leading-relaxed font-light transition-colors duration-500">
+            <p
+              class="text-sm text-portfolio-text/80 leading-relaxed font-light transition-colors duration-500"
+            >
               {{ event.description }}
             </p>
           </div>
         }
       </div>
     </div>
-
   </div>
 </section>

@@ -1,10 +1,12 @@
 import { Injectable, signal, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-export type ThemeMode = 'light' | 'dark' | 'matrix';
+export type ThemeMode = 'light' | 'dark';
+
+const VALID_THEMES: ThemeMode[] = ['light', 'dark'];
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeService {
   currentTheme = signal<ThemeMode>('light');
@@ -12,8 +14,9 @@ export class ThemeService {
 
   constructor() {
     if (isPlatformBrowser(this.platformId)) {
-      const savedTheme = localStorage.getItem('user-portfolio-theme') as ThemeMode;
-      if (savedTheme) {
+      const savedTheme = localStorage.getItem('user-portfolio-theme') as ThemeMode | null;
+      // 🧹 Protege contra valores antigos no localStorage (ex: 'matrix', removido)
+      if (savedTheme && VALID_THEMES.includes(savedTheme)) {
         this.setTheme(savedTheme);
       } else {
         this.setTheme('dark');

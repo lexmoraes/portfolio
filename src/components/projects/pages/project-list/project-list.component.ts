@@ -1,28 +1,33 @@
 import { Component, computed, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { Project } from '../../../../core/models/project';
 import { MOCK_PROJECTS } from '../../../../core/mocks/projects-mocks';
-import {MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle} from '@angular/material/expansion';
+
+type ProjectFilter = 'all' | 'corporate' | 'personal';
 
 @Component({
   selector: 'app-project-list',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle],
-  templateUrl: './project-list.component.html'
+  imports: [MatIconModule],
+  templateUrl: './project-list.component.html',
 })
 export class ProjectListComponent {
   allProjects = signal<Project[]>(MOCK_PROJECTS);
+  activeFilter = signal<ProjectFilter>('all');
 
-  featuredProject = computed(() =>
-    this.allProjects().find(p => p.title === 'Astrobit')
-  );
+  filteredProjects = computed(() => {
+    const projects = this.allProjects();
+    switch (this.activeFilter()) {
+      case 'corporate':
+        return projects.filter((p) => p.corporate);
+      case 'personal':
+        return projects.filter((p) => !p.corporate);
+      default:
+        return projects;
+    }
+  });
 
-  corporateProjects = computed(() =>
-    this.allProjects().filter(p => p.corporate)
-  );
-
-  personalProjects = computed(() =>
-    this.allProjects().filter(p => !p.corporate)
-  );
+  setFilter(filter: ProjectFilter): void {
+    this.activeFilter.set(filter);
+  }
 }

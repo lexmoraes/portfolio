@@ -1,0 +1,24 @@
+<section
+  class="relative py-16 md:py-24 bg-portfolio-bg text-portfolio-text transition-colors duration-500"
+>
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex justify-end mb-8">
+      <button
+        (click)="downloadPDF()"
+        [disabled]="isDownloading()"
+        [class.cursor-not-allowed]="isDownloading()"
+        class="btn btn-outline select-none"
+      >
+        @if (isDownloading()) {
+          <mat-icon class="!w-5 !h-5 !text-[20px] animate-spin">sync</mat-icon>
+          <span>Gerando PDF...</span>
+        } @else {
+          <mat-icon class="!w-5 !h-5 !text-[20px]">download</mat-icon>
+          <span>Baixar CV</span>
+        }
+      </button>
+    </div>
+
+    <app-resume-view #resumeTemplate></app-resume-view>
+  </div>
+</section>

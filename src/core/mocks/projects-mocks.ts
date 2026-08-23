@@ -17,14 +17,14 @@ export const MOCK_PROJECTS: Project[] = [
       'Celery',
       'WebSocket',
       'OAuth',
-      'GitLab API'
+      'GitLab API',
     ],
     deployUrl: 'https://planit.fpf.br',
     imageUrl: 'assets/images/projects/planit.jpg',
     featured: true,
     aosAnimation: 'fade-up',
     corporate: true,
-    company: 'FPFtech'
+    company: 'FPFtech',
   },
 
   {
@@ -40,14 +40,14 @@ export const MOCK_PROJECTS: Project[] = [
       'Django REST',
       'PostgreSQL',
       'Docker',
-      'REST API'
+      'REST API',
     ],
     gitFrontendUrl: 'https://github.com/antonio-pss/bit-academy-frontend',
     gitBackendUrl: 'https://github.com/antonio-pss/bit-academy-back',
     imageUrl: 'assets/images/projects/bit-academy.jpg',
     featured: true,
     aosAnimation: 'fade-right',
-    corporate: false
+    corporate: false,
   },
 
   {
@@ -56,19 +56,12 @@ export const MOCK_PROJECTS: Project[] = [
     subtitle: 'Jogo Educacional Gamificado',
     description:
       'Jogo educacional desenvolvido em equipe com foco no ensino de lógica e programação. Projeto premiado com medalha de ouro na Mostratech da FPFtech, utilizando Python, PostgreSQL e ferramentas de game design para criar uma experiência interativa e educativa.',
-    technologies: [
-      'Python',
-      'PostgreSQL',
-      'Pygame',
-      'Game Development',
-      'Aseprite',
-      'Tiled'
-    ],
+    technologies: ['Python', 'PostgreSQL', 'Pygame', 'Game Development', 'Aseprite', 'Tiled'],
     gitFrontendUrl: 'https://github.com/lexmoraes',
     imageUrl: 'assets/images/projects/bit-debugger.jpg',
     featured: false,
     aosAnimation: 'fade-left',
-    corporate: false
+    corporate: false,
   },
 
   {
@@ -84,7 +77,7 @@ export const MOCK_PROJECTS: Project[] = [
       'Django REST',
       'Godot',
       'PostgreSQL',
-      'Docker'
+      'Docker',
     ],
     gitBackendUrl: 'https://github.com/lexmoraes/astrobit-backend',
     gitFrontendUrl: 'https://github.com/alef-nunesmonteiro/astrobit-front',
@@ -93,7 +86,7 @@ export const MOCK_PROJECTS: Project[] = [
     scientificArticle: 'https://periodicos.ufsm.br/reter/article/view/94680',
     featured: true,
     aosAnimation: 'fade-up',
-    corporate: false
+    corporate: false,
   },
 
   {
@@ -108,14 +101,14 @@ export const MOCK_PROJECTS: Project[] = [
       'GSAP',
       'TailwindCSS',
       'Angular Signals',
-      'Responsive Design'
+      'Responsive Design',
     ],
     gitFrontendUrl: 'https://github.com/lexmoraes/portfolio',
     deployUrl: 'https://lexmoraes.dev',
     imageUrl: 'assets/images/projects/portfolio.png',
     featured: true,
     aosAnimation: 'fade-right',
-    corporate: false
+    corporate: false,
   },
 
   {
@@ -135,14 +128,14 @@ export const MOCK_PROJECTS: Project[] = [
       'WebSocket',
       'OpenAI (IA)',
       'MinIO',
-      'Docker'
+      'Docker',
     ],
     deployUrl: 'https://bit.fpf.br/',
     imageUrl: 'assets/images/projects/bit.png',
     featured: false,
     aosAnimation: 'fade-up',
     corporate: true,
-    company: 'FPFtech'
+    company: 'FPFtech',
   },
 
   {
@@ -162,12 +155,12 @@ export const MOCK_PROJECTS: Project[] = [
       'Celery',
       'WebSocket',
       'Amazon S3',
-      'Docker'
+      'Docker',
     ],
     imageUrl: 'assets/images/projects/without-image.png',
     featured: false,
     aosAnimation: 'fade-up',
     corporate: true,
-    company: 'FPFtech'
-  }
+    company: 'FPFtech',
+  },
 ];
