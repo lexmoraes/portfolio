@@ -1,4 +1,5 @@
 import { Component, computed, input, signal } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { Project } from '../../../../core/models/project';
 
@@ -14,7 +15,7 @@ const VISIBLE_TECHS = 6;
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, NgOptimizedImage],
   templateUrl: './project-card.component.html',
   host: { class: 'block h-full' }
 })

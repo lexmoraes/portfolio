@@ -20,7 +20,7 @@ export const MOCK_PROJECTS: Project[] = [
       'GitLab API'
     ],
     deployUrl: 'https://planit.fpf.br',
-    imageUrl: 'assets/images/projects/planit.jpg',
+    imageUrl: 'assets/images/projects/planit.webp',
     featured: true,
     aosAnimation: 'fade-up',
     corporate: true,
@@ -44,7 +44,7 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     gitFrontendUrl: 'https://github.com/antonio-pss/bit-academy-frontend',
     gitBackendUrl: 'https://github.com/antonio-pss/bit-academy-back',
-    imageUrl: 'assets/images/projects/bit-academy.jpg',
+    imageUrl: 'assets/images/projects/bit-academy.webp',
     featured: true,
     aosAnimation: 'fade-right',
     corporate: false
@@ -64,7 +64,7 @@ export const MOCK_PROJECTS: Project[] = [
       'Aseprite',
       'Tiled'
     ],
-    imageUrl: 'assets/images/projects/bit-debugger.jpg',
+    imageUrl: 'assets/images/projects/bit-debugger.webp',
     featured: false,
     aosAnimation: 'fade-left',
     corporate: false
@@ -88,7 +88,7 @@ export const MOCK_PROJECTS: Project[] = [
     gitBackendUrl: 'https://github.com/lexmoraes/astrobit-backend',
     gitFrontendUrl: 'https://github.com/alef-nunesmonteiro/astrobit-front',
     deployUrl: 'https://antonio-pss.github.io/astrobit/',
-    imageUrl: 'assets/images/projects/astrobit.png',
+    imageUrl: 'assets/images/projects/astrobit.webp',
     scientificArticle: 'https://periodicos.ufsm.br/reter/article/view/94680',
     featured: true,
     aosAnimation: 'fade-up',
@@ -111,7 +111,7 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     gitFrontendUrl: 'https://github.com/lexmoraes/portfolio',
     deployUrl: 'https://www.alexmoraes.dev',
-    imageUrl: 'assets/images/projects/portfolio.png',
+    imageUrl: 'assets/images/projects/portfolio.webp',
     featured: true,
     aosAnimation: 'fade-right',
     corporate: false
@@ -137,7 +137,7 @@ export const MOCK_PROJECTS: Project[] = [
       'Docker'
     ],
     deployUrl: 'https://bit.fpf.br/',
-    imageUrl: 'assets/images/projects/bit.png',
+    imageUrl: 'assets/images/projects/bit.webp',
     featured: false,
     aosAnimation: 'fade-up',
     corporate: true,
