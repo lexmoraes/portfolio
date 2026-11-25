@@ -7,7 +7,8 @@ export interface Project {
   gitBackendUrl?: string;
   gitFrontendUrl?: string;
   deployUrl?: string;
-  imageUrl: string;
+  /** Captura de tela do projeto; sem ela o card mostra um placeholder com o nome. */
+  imageUrl?: string;
   featured: boolean;
   aosAnimation?: string;
   iframeUrl?: string;

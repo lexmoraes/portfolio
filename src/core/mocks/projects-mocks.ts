@@ -32,7 +32,7 @@ export const MOCK_PROJECTS: Project[] = [
     title: 'Bit Academy',
     subtitle: 'Ecossistema Inteligente de Gestão Escolar',
     description:
-      'Projeto modular desenvolvido para modernizar a gestão escolar e potencializar o aprendizado com recursos inteligentes e gamificação. Desenvolvimento frontend em Angular e backend in Django REST Framework com arquitetura modular e deploy utilizando Docker.',
+      'Projeto modular desenvolvido para modernizar a gestão escolar e potencializar o aprendizado com recursos inteligentes e gamificação. Desenvolvimento frontend em Angular e backend em Django REST Framework com arquitetura modular e deploy utilizando Docker.',
     technologies: [
       'Angular',
       'TypeScript',
@@ -64,7 +64,6 @@ export const MOCK_PROJECTS: Project[] = [
       'Aseprite',
       'Tiled'
     ],
-    gitFrontendUrl: 'https://github.com/lexmoraes',
     imageUrl: 'assets/images/projects/bit-debugger.jpg',
     featured: false,
     aosAnimation: 'fade-left',
@@ -101,17 +100,17 @@ export const MOCK_PROJECTS: Project[] = [
     title: 'Meu Portfólio',
     subtitle: 'Portfólio Profissional Full Stack',
     description:
-      'Portfólio moderno desenvolvido em Angular com foco em performance, responsividade e experiência visual. Utiliza Angular Signals, animações com GSAP, arquitetura standalone e design minimalista para apresentar projetos e trajetória profissional.',
+      'Portfólio moderno desenvolvido em Angular com foco em performance, responsividade e experiência visual. Utiliza Angular Signals, componentes standalone, renderização no servidor (SSR) e três temas visuais para apresentar projetos e trajetória profissional.',
     technologies: [
       'Angular',
       'TypeScript',
-      'GSAP',
+      'Angular SSR',
       'TailwindCSS',
       'Angular Signals',
       'Responsive Design'
     ],
     gitFrontendUrl: 'https://github.com/lexmoraes/portfolio',
-    deployUrl: 'https://lexmoraes.dev',
+    deployUrl: 'https://www.alexmoraes.dev',
     imageUrl: 'assets/images/projects/portfolio.png',
     featured: true,
     aosAnimation: 'fade-right',
@@ -164,7 +163,6 @@ export const MOCK_PROJECTS: Project[] = [
       'Amazon S3',
       'Docker'
     ],
-    imageUrl: 'assets/images/projects/without-image.png',
     featured: false,
     aosAnimation: 'fade-up',
     corporate: true,
