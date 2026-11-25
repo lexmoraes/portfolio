@@ -7,6 +7,7 @@ import { MOCK_PROJECTS } from '../../core/mocks/projects-mocks';
 import { ProjectListComponent } from '../projects/pages/project-list/project-list.component';
 import { AboutComponent } from '../about/about.component';
 import { ThemeService } from '../../shared/services/theme.service';
+import { SeoService } from '../../shared/services/seo.service';
 import { ResumeComponent } from '../resume/resume.component';
 import { ContactComponent } from '../contact/contact.component';
 import { SkillsComponent } from '../skills/skills.component';
@@ -27,6 +28,12 @@ export class HomeComponent {
   themeService = inject(ThemeService);
 
   constructor() {
+    inject(SeoService).update({
+      title: 'Alexsandro Moraes | Desenvolvedor Full Stack',
+      description: 'Portfólio de Alexsandro Moraes, desenvolvedor Full Stack em Manaus com experiência em Angular, Django REST Framework e PostgreSQL. Projetos, trajetória e currículo.',
+      path: '/'
+    });
+
     afterNextRender(() => {
       if (typeof AOS !== 'undefined') {
         AOS.init({
