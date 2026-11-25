@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ResumeView } from '../../shared/resume-view/resume-view';
 import { ResumeComponent } from './resume.component';
+import { SeoService } from '../../shared/services/seo.service';
 
 @Component({
   selector: 'app-resume-page',
@@ -25,10 +25,10 @@ import { ResumeComponent } from './resume.component';
 })
 export class ResumePageComponent {
   constructor() {
-    inject(Title).setTitle('Currículo | Alexsandro Moraes');
-    inject(Meta).updateTag({
-      name: 'description',
-      content: 'Currículo de Alexsandro Moraes, desenvolvedor Full Stack (Angular, Django REST Framework, PostgreSQL).'
+    inject(SeoService).update({
+      title: 'Currículo | Alexsandro Moraes',
+      description: 'Currículo de Alexsandro Moraes, desenvolvedor Full Stack (Angular, Django REST Framework, PostgreSQL): formação, experiência, projetos e habilidades.',
+      path: '/curriculo'
     });
   }
 }
