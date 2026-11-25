@@ -22,10 +22,10 @@
         </a>
 
         <div class="flex items-center gap-2.5 sm:gap-6 md:gap-8 text-xs sm:text-sm font-medium">
-          <a href="#hero" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Início</a>
-          <a href="#projects" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Projetos</a>
-          <a href="#about" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Sobre</a>
-          <a href="#contato" class="text-portfolio-text/80 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Contato</a>
+          <a href="#hero" class="text-portfolio-text/90 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Início</a>
+          <a href="#projects" class="text-portfolio-text/90 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Projetos</a>
+          <a href="#about" class="text-portfolio-text/90 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Sobre</a>
+          <a href="#contato" class="text-portfolio-text/90 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Contato</a>
 
           <button [matMenuTriggerFor]="themeMenu"
                   mat-icon-button
@@ -33,7 +33,7 @@
             <mat-icon>palette</mat-icon>
           </button>
 
-          <mat-menu #themeMenu="matMenu" panelClass="custom-theme-menu">
+          <mat-menu #themeMenu="matMenu" class="custom-theme-menu">
 
             <div class="menu-header block w-full">
               <span class="text-[10px] uppercase tracking-widest font-bold block">Escolha o Tema</span>
@@ -43,7 +43,7 @@
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center gap-2.5">
                   <mat-icon>light_mode</mat-icon>
-                  <span class="font-medium">Light mode</span>
+                  <span class="font-medium">Claro</span>
                 </div>
                 @if (themeService.currentTheme() === 'light') {
                   <mat-icon class="check-icon">check</mat-icon>
@@ -55,7 +55,7 @@
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center gap-2.5">
                   <mat-icon>dark_mode</mat-icon>
-                  <span class="font-medium">Dark mode</span>
+                  <span class="font-medium">Escuro</span>
                 </div>
                 @if (themeService.currentTheme() === 'dark') {
                   <mat-icon class="check-icon">check</mat-icon>
@@ -67,7 +67,7 @@
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center gap-2.5">
                   <mat-icon>terminal</mat-icon>
-                  <span class="font-medium">Matrix mode</span>
+                  <span class="font-medium">Matrix</span>
                 </div>
                 @if (themeService.currentTheme() === 'matrix') {
                   <mat-icon class="check-icon">check</mat-icon>
@@ -87,12 +87,12 @@
 
     <footer class="border-t border-portfolio-border/20 bg-portfolio-card/10 backdrop-blur-lg transition-colors duration-500">
       <div class="max-w-7xl mx-auto px-4 sm:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-sm text-portfolio-text/70">
+        <p class="text-sm text-portfolio-text/90">
           © 2026 Alexsandro Moraes
         </p>
         <div class="flex items-center gap-5 text-sm">
-          <a href="https://github.com/lexmoraes" target="_blank" class="text-portfolio-text/70 hover:text-portfolio-primary transition-colors">GitHub</a>
-          <a href="https://www.linkedin.com/in/lexmoraes" target="_blank" class="text-portfolio-text/70 hover:text-portfolio-primary transition-colors">LinkedIn</a>
+          <a href="https://github.com/lexmoraes" target="_blank" class="text-portfolio-text/90 hover:text-portfolio-primary transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/lexmoraes" target="_blank" class="text-portfolio-text/90 hover:text-portfolio-primary transition-colors">LinkedIn</a>
         </div>
       </div>
     </footer>
