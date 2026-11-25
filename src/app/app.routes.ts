@@ -18,8 +18,8 @@ export const routes: Routes = [
       {
         path: 'curriculo',
         loadComponent: () =>
-          import('../components/resume/resume.component')
-            .then(m => m.ResumeComponent)
+          import('../components/resume/resume-page.component')
+            .then(m => m.ResumePageComponent)
       }
     ]
   },

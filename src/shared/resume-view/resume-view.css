@@ -94,9 +94,29 @@
 
 /* Ajuste de Impressão Nativa */
 @media print {
-  .container-cv { 
-    box-shadow: none !important; 
+  .container-cv {
+    box-shadow: none !important;
     padding: 0 !important;
+    max-width: none !important;
     background: #ffffff !important;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+
+  .container-cv h1 { font-size: 20pt; margin-top: 0; }
+  .container-cv h2 { font-size: 13pt; margin-top: 14px; }
+  .container-cv h3 { font-size: 11.5pt; margin-top: 10px; }
+  .container-cv .exp-meta { font-size: 10pt; margin-bottom: 4px; }
+  .container-cv .section { margin-top: 12px; }
+  .container-cv li { margin-bottom: 2px; }
+
+  .container-cv h2,
+  .container-cv h3 {
+    break-after: avoid;
+  }
+
+  .container-cv li,
+  .container-cv p {
+    break-inside: avoid;
   }
 }
