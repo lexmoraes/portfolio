@@ -24,12 +24,12 @@ export class SkillsComponent {
     {
       title: 'Backend',
       icon: 'dns',
-      skills: ['Python', 'Django REST Framework', 'APIs REST', 'OAuth', 'WebSocket', 'NestJS', 'Prisma', 'Java', 'Go']
+      skills: ['Python', 'Django REST Framework', 'Django Channels', 'APIs REST', 'JWT', 'OAuth', 'WebSocket', 'NestJS', 'Prisma', 'Java', 'Go']
     },
     {
       title: 'Dados & Infraestrutura',
       icon: 'storage',
-      skills: ['PostgreSQL', 'SQLite', 'Redis', 'Celery', 'Docker', 'Git']
+      skills: ['PostgreSQL', 'SQLite', 'Redis', 'Celery', 'Docker', 'Nginx', 'Git', 'GitHub Actions']
     },
     {
       title: 'IA & Processos',
