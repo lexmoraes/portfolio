@@ -1,0 +1,64 @@
+<article class="group h-full rounded-2xl overflow-hidden border border-portfolio-border bg-portfolio-card hover:-translate-y-1 hover:border-portfolio-primary/60 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col">
+  <div class="aspect-[16/9] overflow-hidden bg-portfolio-bg relative">
+    @if (project().imageUrl) {
+      <img [src]="project().imageUrl"
+           [alt]="'Tela do projeto ' + project().title"
+           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+    } @else {
+      <div class="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-portfolio-primary/25 via-portfolio-card to-portfolio-bg" aria-hidden="true">
+        <mat-icon class="!w-10 !h-10 !text-[40px] text-portfolio-primary">dashboard</mat-icon>
+        <span class="text-2xl font-black tracking-tight text-portfolio-heading">{{ project().title }}</span>
+      </div>
+    }
+
+    @if (project().company) {
+      <span class="absolute top-4 left-4 px-3 py-1 bg-portfolio-primary text-portfolio-bg text-xs font-bold rounded-md uppercase tracking-wider">
+        {{ project().company }}
+      </span>
+    }
+  </div>
+
+  <div class="p-6 flex flex-col flex-1">
+    <p class="text-xs uppercase tracking-widest text-portfolio-primary font-semibold">{{ project().subtitle }}</p>
+    <h4 class="mt-2 text-2xl font-bold text-portfolio-heading">{{ project().title }}</h4>
+    <p class="mt-3 text-sm leading-relaxed text-portfolio-text">{{ project().description }}</p>
+
+    <ul class="flex flex-wrap gap-2 mt-5" aria-label="Tecnologias utilizadas">
+      @for (tech of visibleTechs(); track tech) {
+        <li class="px-3 py-1 rounded-full text-xs bg-portfolio-bg border border-portfolio-border text-portfolio-text">
+          {{ tech }}
+        </li>
+      }
+      @if (hiddenTechsCount() > 0) {
+        <li>
+          <button type="button"
+                  (click)="toggleTechs()"
+                  [attr.aria-expanded]="showAllTechs()"
+                  class="px-3 py-1 rounded-full text-xs border border-dashed border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary/10 transition-colors">
+            {{ showAllTechs() ? 'Mostrar menos' : '+' + hiddenTechsCount() + (hiddenTechsCount() === 1 ? ' tecnologia' : ' tecnologias') }}
+          </button>
+        </li>
+      }
+    </ul>
+
+    <div class="mt-auto pt-6">
+      <div class="flex flex-wrap gap-3 border-t border-portfolio-border/60 pt-5">
+        @for (link of links(); track link.href) {
+          <a [href]="link.href"
+             target="_blank"
+             rel="noopener noreferrer"
+             [attr.aria-label]="link.ariaLabel + ' (abre em nova aba)'"
+             class="flex-1 min-w-[140px] min-h-11 inline-flex items-center justify-center gap-1.5 px-4 rounded-xl border border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary/10 text-sm font-medium transition-colors duration-300">
+            {{ link.label }}
+            <span aria-hidden="true">↗</span>
+          </a>
+        } @empty {
+          <p class="text-xs text-portfolio-text/90 italic flex items-center gap-1.5">
+            <mat-icon class="!w-4 !h-4 !text-[16px]" aria-hidden="true">lock</mat-icon>
+            Sistema interno — acesso restrito à empresa
+          </p>
+        }
+      </div>
+    </div>
+  </div>
+</article>

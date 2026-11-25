@@ -1,28 +1,39 @@
 import { Component, computed, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { Project } from '../../../../core/models/project';
 import { MOCK_PROJECTS } from '../../../../core/mocks/projects-mocks';
-import {MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle} from '@angular/material/expansion';
+import { ProjectCardComponent } from '../../components/project-card/project-card.component';
+
+type ProjectFilter = 'all' | 'corporate' | 'personal';
 
 @Component({
   selector: 'app-project-list',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle],
+  imports: [ProjectCardComponent],
   templateUrl: './project-list.component.html'
 })
 export class ProjectListComponent {
-  allProjects = signal<Project[]>(MOCK_PROJECTS);
+  private readonly allProjects = signal(MOCK_PROJECTS);
 
-  featuredProject = computed(() =>
-    this.allProjects().find(p => p.title === 'Astrobit')
-  );
+  readonly filters: { id: ProjectFilter; label: string }[] = [
+    { id: 'all', label: 'Todos' },
+    { id: 'corporate', label: 'Corporativos' },
+    { id: 'personal', label: 'Pessoais & Acadêmicos' }
+  ];
 
-  corporateProjects = computed(() =>
-    this.allProjects().filter(p => p.corporate)
-  );
+  readonly activeFilter = signal<ProjectFilter>('all');
 
-  personalProjects = computed(() =>
-    this.allProjects().filter(p => !p.corporate)
-  );
+  readonly visibleProjects = computed(() => {
+    const filter = this.activeFilter();
+    const projects = this.allProjects();
+    if (filter === 'corporate') return projects.filter(p => p.corporate);
+    if (filter === 'personal') return projects.filter(p => !p.corporate);
+    // Em "Todos", os projetos corporativos aparecem primeiro
+    return [...projects].sort((a, b) => Number(!!b.corporate) - Number(!!a.corporate));
+  });
+
+  countFor(filter: ProjectFilter): number {
+    const projects = this.allProjects();
+    if (filter === 'corporate') return projects.filter(p => p.corporate).length;
+    if (filter === 'personal') return projects.filter(p => !p.corporate).length;
+    return projects.length;
+  }
 }
