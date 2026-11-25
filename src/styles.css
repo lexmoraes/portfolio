@@ -54,6 +54,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Compensa a altura do header fixo (h-20) ao navegar por âncoras */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
 html.matrix, html.matrix body {
   font-family: 'Courier New', Courier, monospace !important;
 }
