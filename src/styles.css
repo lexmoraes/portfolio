@@ -193,3 +193,15 @@ div.mat-mdc-menu-panel.custom-theme-menu .check-icon {
 .custom-portfolio-accordion .mat-expansion-panel:last-child {
   margin-bottom: 0 !important;
 }
+
+/* ==========================================================================
+   🖨️ IMPRESSÃO (Ctrl+P em /curriculo e geração do PDF do CV)
+   ========================================================================== */
+@media print {
+  html, body {
+    background: #ffffff !important;
+  }
+  header, footer, app-matrix-rain, .matrix-bg, .no-print {
+    display: none !important;
+  }
+}
