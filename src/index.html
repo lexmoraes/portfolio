@@ -67,7 +67,8 @@
           document.documentElement.classList.add('dark');
         }
       } catch (e) {
-        console.error('Erro ao carregar tema antecipado:', e);
+        // localStorage indisponível: usa o tema padrão
+        document.documentElement.classList.add('dark');
       }
     })();
   </script>

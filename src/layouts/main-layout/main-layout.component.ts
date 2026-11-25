@@ -31,6 +31,8 @@ export class MainLayoutComponent {
     { id: 'contato', label: 'Contato' }
   ];
 
+  readonly currentYear = new Date().getFullYear();
+
   /** Seção visível no momento, destacada no menu (aria-current). */
   readonly activeSection = signal<string | null>(null);
 
