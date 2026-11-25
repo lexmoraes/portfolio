@@ -25,7 +25,7 @@ export class AboutComponent {
   },
   {
     year: 'Abril/2025 - Junho/2026',
-    title: 'Estagiário em Desenvolvemento Full Stack',
+    title: 'Estagiário em Desenvolvimento Full Stack',
     institution: 'Fundação Desembargador Paulo Feitoza (FPFtech)',
     description:
       'Desenvolvimento de aplicações com Angular, Django REST Framework e PostgreSQL, utilizando Docker, OAuth, WebSocket, Celery + Redis e integração com APIs.'
