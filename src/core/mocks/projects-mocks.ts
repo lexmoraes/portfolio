@@ -30,7 +30,7 @@ export const MOCK_PROJECTS: Project[] = [
     title: 'Skeleton',
     subtitle: 'Base Full Stack para Novos Projetos',
     description:
-      'Base full stack reutilizável, extraída de um projeto real em produção, para iniciar novos sistemas sem reescrever a infraestrutura. Traz autenticação JWT com rotação e blacklist de refresh token, WebSocket autenticado com Django Channels, mensageria com Celery + Redis, storage S3 com SeaweedFS, i18n em português e inglês, CI no GitHub Actions e deploy com Docker atrás de Nginx.',
+      'Base full stack reutilizável para iniciar novos sistemas sem reescrever a infraestrutura. Traz autenticação JWT com rotação e blacklist de refresh token, WebSocket autenticado com Django Channels, mensageria com Celery + Redis, storage S3 com SeaweedFS, i18n em português e inglês, CI no GitHub Actions e deploy com Docker atrás de Nginx.',
     technologies: [
       'Angular',
       'TypeScript',
