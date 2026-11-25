@@ -9,7 +9,7 @@
       <h1 class="mt-6 text-5xl md:text-7xl font-black leading-tight text-portfolio-heading transition-colors duration-500">
         Projetos que unem <span class="text-portfolio-primary">arquitetura,</span> performance e experiência.
       </h1>
-      <p class="mt-8 text-lg text-portfolio-text/80 leading-relaxed max-w-2xl font-light transition-colors duration-500">
+      <p class="mt-8 text-lg text-portfolio-text/90 leading-relaxed max-w-2xl transition-colors duration-500">
         Aplicações desenvolvidas com foco em escalabilidade, experiência do usuário e interfaces modernas utilizando Angular, Django e tecnologias modernas do ecossistema web.
       </p>
     </div>
@@ -39,7 +39,7 @@
                 <div class="p-6 pb-0">
                   <span class="text-xs uppercase tracking-widest text-portfolio-primary font-semibold transition-colors duration-500">{{ project.subtitle }}</span>
                   <h3 class="mt-3 text-2xl font-bold text-portfolio-heading transition-colors duration-500">{{ project.title }}</h3>
-                  <p class="mt-4 text-sm leading-relaxed text-portfolio-text/90 font-light transition-colors duration-500">{{ project.description }}</p>
+                  <p class="mt-4 text-sm leading-relaxed text-portfolio-text/90 transition-colors duration-500">{{ project.description }}</p>
                   <div class="flex flex-wrap gap-2 mt-6">
                     @for (tech of project.technologies; track tech) {
                       <span class="px-3 py-1 rounded-full text-xs bg-portfolio-card border border-portfolio-border text-portfolio-text transition-all duration-500">
@@ -56,7 +56,7 @@
                       Acesse aqui
                     </a>
                   } @else {
-                    <div class="text-xs text-portfolio-text/40 italic flex items-center gap-1.5 px-2">
+                    <div class="text-xs text-portfolio-text/90 italic flex items-center gap-1.5 px-2">
                       <mat-icon class="!w-4 !h-4 !text-[16px]">lock</mat-icon> Ambiente de produção privado / interno
                     </div>
                   }
@@ -85,7 +85,7 @@
                 <div class="p-6 pb-0">
                   <span class="text-xs uppercase tracking-widest text-portfolio-primary font-semibold transition-colors duration-500">{{ project.subtitle }}</span>
                   <h3 class="mt-3 text-2xl font-bold text-portfolio-heading transition-colors duration-500">{{ project.title }}</h3>
-                  <p class="mt-4 text-sm leading-relaxed text-portfolio-text/90 font-light transition-colors duration-500">{{ project.description }}</p>
+                  <p class="mt-4 text-sm leading-relaxed text-portfolio-text/90 transition-colors duration-500">{{ project.description }}</p>
                   <div class="flex flex-wrap gap-2 mt-6">
                     @for (tech of project.technologies; track tech) {
                       <span class="px-3 py-1 rounded-full text-xs bg-portfolio-card border border-portfolio-border text-portfolio-text transition-all duration-500">

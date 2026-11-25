@@ -15,9 +15,11 @@
   --bg-page: #E0D3BA;
   --bg-card: #DCCBA4;
   --border-color: #D9BE98;
-  --text-body: #5A4F4A;
+  --text-body: #4A403B;
   --text-heading: #1A1513;
-  --primary-color: #AC6D35;
+  --primary-color: #7F4A1E; /* contraste AA (≥4.5:1) sobre o fundo e os cards */
+  --menu-hover: rgba(127, 74, 30, 0.12);
+  color-scheme: light;
 }
 
 /* 🟤 ESTADO 2: ESCURO TERROSO (DARK) */
@@ -28,6 +30,8 @@ html.dark {
   --text-body: #C5BAA2;
   --text-heading: #FFFFFF;
   --primary-color: #CEB07D;
+  --menu-hover: rgba(206, 176, 125, 0.14);
+  color-scheme: dark;
 }
 
 /* 🟢 ESTADO 3: MATRIX MODE */
@@ -38,6 +42,8 @@ html.matrix {
   --text-body: #c3c3c3;
   --text-heading: #c3c3c3;
   --primary-color: #1a981a;
+  --menu-hover: rgba(26, 152, 26, 0.16);
+  color-scheme: dark;
 }
 
 /* 🛠️ 2. RESETS E CONFIGURAÇÕES GLOBAIS */
@@ -97,16 +103,16 @@ html.matrix .matrix-bg {
 
 /* 1. O Container do Overlay (Proporcional ao texto e com bordas suaves) */
 div.mat-mdc-menu-panel.custom-theme-menu {
-  background-color: #DCCBA4 !important; /* Fundo fixo Claro Boho */
-  border: 1px solid #D9BE98 !important; /* Borda fixa Claro Boho */
-  box-shadow: 0 10px 20px rgba(26, 21, 19, 0.15) !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
   border-radius: 16px !important; /* Raio reduzido para harmonizar com o tamanho menor */
   overflow: hidden !important;
 
   /* 📐 Largura Slim Perfeita: Nem apertado, nem gigante */
-  width: 175px !important;
-  min-width: 175px !important;
-  max-width: 175px !important;
+  width: 190px !important;
+  min-width: 190px !important;
+  max-width: 190px !important;
 }
 
 /* 2. Alinhamento da lista interna (Remove espaçamentos fantasmas) */
@@ -122,10 +128,10 @@ div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-content {
 div.mat-mdc-menu-panel.custom-theme-menu .menu-header {
   padding: 6px 12px 6px 12px !important;
   margin-bottom: 4px !important;
-  border-bottom: 1px solid rgba(172, 109, 53, 0.15) !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
 div.mat-mdc-menu-panel.custom-theme-menu .menu-header span {
-  color: #AC6D35 !important;
+  color: var(--primary-color) !important;
   font-size: 10px !important;
   font-weight: 700 !important;
   letter-spacing: 0.05em !important;
@@ -148,21 +154,28 @@ div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item {
 div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item,
 div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item .mdc-list-item__label,
 div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item span {
-  color: #1A1513 !important; /* Texto escuro do Claro Boho permanente */
+  color: var(--text-heading) !important;
   font-size: 13px !important;
   font-weight: 500 !important;
-  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+  font-family: inherit !important;
 }
 
 /* Hover sutil */
 div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item:hover {
-  background-color: rgba(172, 109, 53, 0.12) !important;
+  background-color: var(--menu-hover) !important;
   background-image: none !important;
+}
+
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item:focus-visible,
+div.mat-mdc-menu-panel.custom-theme-menu .mat-mdc-menu-item.cdk-keyboard-focused {
+  background-color: var(--menu-hover) !important;
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
 }
 
 /* 6. Redimensionamento dos Ícones (Essencial para não estourar o layout) */
 div.mat-mdc-menu-panel.custom-theme-menu .mat-icon {
-  color: #AC6D35 !important;
+  color: var(--primary-color) !important;
   font-size: 18px !important; /* Reduzido de 24px para 18px para ficar delicado e simétrico */
   width: 18px !important;
   height: 18px !important;
