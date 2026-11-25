@@ -1,27 +1,29 @@
-import { Injectable, signal, inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 export type ThemeMode = 'light' | 'dark' | 'matrix';
+
+const STORAGE_KEY = 'user-portfolio-theme';
+const THEMES: readonly ThemeMode[] = ['light', 'dark', 'matrix'];
+
+const isThemeMode = (value: unknown): value is ThemeMode =>
+  THEMES.includes(value as ThemeMode);
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
+  private readonly platformId = inject(PLATFORM_ID);
+
   /**
    * 'dark' é o tema padrão (mesmo do script em index.html); usar o mesmo
    * valor no SSR faz o HTML pré-renderizado já vir com a foto correta.
    */
-  currentTheme = signal<ThemeMode>('dark');
-  private platformId = inject(PLATFORM_ID);
+  readonly currentTheme = signal<ThemeMode>('dark');
 
   constructor() {
     if (isPlatformBrowser(this.platformId)) {
-      const savedTheme = localStorage.getItem('user-portfolio-theme') as ThemeMode;
-      if (savedTheme) {
-        this.setTheme(savedTheme);
-      } else {
-        this.setTheme('dark');
-      }
+      this.setTheme(this.readStoredTheme() ?? 'dark');
     }
   }
 
@@ -29,10 +31,23 @@ export class ThemeService {
     this.currentTheme.set(theme);
 
     if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('user-portfolio-theme', theme);
+      try {
+        localStorage.setItem(STORAGE_KEY, theme);
+      } catch {
+        // Armazenamento indisponível (modo privado, cookies bloqueados): segue sem persistir
+      }
       const root = document.documentElement;
-      root.classList.remove('light', 'dark', 'matrix');
+      root.classList.remove(...THEMES);
       root.classList.add(theme);
+    }
+  }
+
+  private readStoredTheme(): ThemeMode | null {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return isThemeMode(saved) ? saved : null;
+    } catch {
+      return null;
     }
   }
 }

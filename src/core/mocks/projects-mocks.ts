@@ -21,8 +21,6 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     deployUrl: 'https://planit.fpf.br',
     imageUrl: 'assets/images/projects/planit.webp',
-    featured: true,
-    aosAnimation: 'fade-up',
     corporate: true,
     company: 'FPFtech'
   },
@@ -45,8 +43,6 @@ export const MOCK_PROJECTS: Project[] = [
     gitFrontendUrl: 'https://github.com/antonio-pss/bit-academy-frontend',
     gitBackendUrl: 'https://github.com/antonio-pss/bit-academy-back',
     imageUrl: 'assets/images/projects/bit-academy.webp',
-    featured: true,
-    aosAnimation: 'fade-right',
     corporate: false
   },
 
@@ -65,8 +61,6 @@ export const MOCK_PROJECTS: Project[] = [
       'Tiled'
     ],
     imageUrl: 'assets/images/projects/bit-debugger.webp',
-    featured: false,
-    aosAnimation: 'fade-left',
     corporate: false
   },
 
@@ -90,8 +84,6 @@ export const MOCK_PROJECTS: Project[] = [
     deployUrl: 'https://antonio-pss.github.io/astrobit/',
     imageUrl: 'assets/images/projects/astrobit.webp',
     scientificArticle: 'https://periodicos.ufsm.br/reter/article/view/94680',
-    featured: true,
-    aosAnimation: 'fade-up',
     corporate: false
   },
 
@@ -112,8 +104,6 @@ export const MOCK_PROJECTS: Project[] = [
     gitFrontendUrl: 'https://github.com/lexmoraes/portfolio',
     deployUrl: 'https://www.alexmoraes.dev',
     imageUrl: 'assets/images/projects/portfolio.webp',
-    featured: true,
-    aosAnimation: 'fade-right',
     corporate: false
   },
 
@@ -138,8 +128,6 @@ export const MOCK_PROJECTS: Project[] = [
     ],
     deployUrl: 'https://bit.fpf.br/',
     imageUrl: 'assets/images/projects/bit.webp',
-    featured: false,
-    aosAnimation: 'fade-up',
     corporate: true,
     company: 'FPFtech'
   },
@@ -163,8 +151,6 @@ export const MOCK_PROJECTS: Project[] = [
       'Amazon S3',
       'Docker'
     ],
-    featured: false,
-    aosAnimation: 'fade-up',
     corporate: true,
     company: 'FPFtech'
   }
