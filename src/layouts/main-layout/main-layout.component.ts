@@ -46,7 +46,12 @@ export class MainLayoutComponent {
         observer = new IntersectionObserver(
           entries => {
             for (const entry of entries) {
-              if (entry.isIntersecting) this.activeSection.set(entry.target.id);
+              if (entry.isIntersecting) {
+                this.activeSection.set(entry.target.id);
+              } else if (this.activeSection() === entry.target.id) {
+                // Saiu da faixa central sem outra seção do menu entrar (ex.: Habilidades)
+                this.activeSection.set(null);
+              }
             }
           },
           { rootMargin: '-45% 0px -50% 0px' }
