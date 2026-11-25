@@ -1,0 +1,29 @@
+<section aria-labelledby="skills-title" class="py-20 text-portfolio-text">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8">
+    <p class="text-sm uppercase tracking-[0.3em] text-portfolio-primary font-semibold">Stack</p>
+    <h2 id="skills-title" class="mt-4 text-3xl md:text-4xl font-black text-portfolio-heading">
+      Habilidades técnicas
+    </h2>
+
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      @for (group of groups; track group.title) {
+        <div class="p-6 rounded-2xl bg-portfolio-card border border-portfolio-border">
+          <h3 class="flex items-center gap-2 text-lg font-bold text-portfolio-heading">
+            <mat-icon class="text-portfolio-primary" aria-hidden="true">{{ group.icon }}</mat-icon>
+            {{ group.title }}
+          </h3>
+          @if (group.note) {
+            <p class="mt-1 text-xs text-portfolio-text/90">{{ group.note }}</p>
+          }
+          <ul class="mt-4 flex flex-wrap gap-2">
+            @for (skill of group.skills; track skill) {
+              <li class="px-3 py-1 rounded-full text-xs bg-portfolio-bg border border-portfolio-border text-portfolio-text">
+                {{ skill }}
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>
