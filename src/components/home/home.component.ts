@@ -8,13 +8,14 @@ import { ProjectListComponent } from '../projects/pages/project-list/project-lis
 import { AboutComponent } from '../about/about.component';
 import { ThemeService } from '../../shared/services/theme.service';
 import { ResumeComponent } from '../resume/resume.component';
+import { ContactComponent } from '../contact/contact.component';
 
 declare const AOS: any;
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, ProjectListComponent, AboutComponent, ResumeComponent],
+  imports: [CommonModule, MatButtonModule, MatIconModule, ProjectListComponent, AboutComponent, ResumeComponent, ContactComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

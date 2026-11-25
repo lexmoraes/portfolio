@@ -15,11 +15,6 @@ interface TimelineEvent {
   templateUrl: './about.component.html'
 })
 export class AboutComponent {
-  showContact = signal<boolean>(false);
-  toggleContact(): void {
-    this.showContact.update(value => !value);
-  }
-
   history = signal<TimelineEvent[]>([
   {
     year: 'Julho/2026 - Atual',

@@ -1,0 +1,39 @@
+<section aria-labelledby="contact-title" class="py-24 bg-portfolio-bg text-portfolio-text transition-colors duration-500">
+  <div class="max-w-3xl mx-auto px-6">
+    <span class="text-xs uppercase tracking-[0.25em] text-portfolio-primary font-bold block mb-4">
+      Está precisando de um desenvolvedor?
+    </span>
+
+    <h2 id="contact-title" class="text-4xl md:text-5xl font-black tracking-tight text-portfolio-heading">
+      Vamos trabalhar juntos?
+    </h2>
+
+    <p class="mt-4 text-base md:text-lg text-portfolio-text leading-relaxed">
+      Escolha o canal que preferir para conversarmos sobre oportunidades e projetos.
+    </p>
+
+    <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4" role="list">
+      @for (link of links; track link.label) {
+        <li>
+          <a [href]="link.href"
+             [attr.target]="link.external ? '_blank' : null"
+             [attr.rel]="link.external ? 'noopener noreferrer' : null"
+             class="flex items-center justify-between p-5 rounded-2xl bg-portfolio-card border border-portfolio-border hover:border-portfolio-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-portfolio-primary group transition-all shadow-sm duration-300">
+            <span>
+              <span class="block font-bold text-portfolio-heading text-sm">{{ link.label }}</span>
+              <span class="block text-xs text-portfolio-text mt-0.5 break-all">{{ link.detail }}</span>
+            </span>
+            <span class="text-portfolio-primary font-bold group-hover:translate-x-1 transition-transform" aria-hidden="true">↗</span>
+            @if (link.external) {
+              <span class="sr-only">(abre em nova aba)</span>
+            }
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="mt-6 sm:w-max">
+      <app-resume label="Baixar currículo (PDF)" />
+    </div>
+  </div>
+</section>
