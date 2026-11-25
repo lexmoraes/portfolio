@@ -38,6 +38,7 @@ export class ProjectCardComponent {
     const links: ProjectLink[] = [];
     if (p.deployUrl) links.push({ label: 'Ver online', ariaLabel: `Ver ${p.title} online`, href: p.deployUrl });
     if (p.scientificArticle) links.push({ label: 'Artigo científico', ariaLabel: `Ler o artigo científico sobre ${p.title}`, href: p.scientificArticle });
+    if (p.repositoryUrl) links.push({ label: 'Código no GitHub', ariaLabel: `Código de ${p.title} no GitHub`, href: p.repositoryUrl });
     if (p.gitFrontendUrl) links.push({ label: 'Código frontend', ariaLabel: `Código do frontend de ${p.title} no GitHub`, href: p.gitFrontendUrl });
     if (p.gitBackendUrl) links.push({ label: 'Código backend', ariaLabel: `Código do backend de ${p.title} no GitHub`, href: p.gitBackendUrl });
     return links;

@@ -26,6 +26,33 @@ export const MOCK_PROJECTS: Project[] = [
   },
 
   {
+    id: '8',
+    title: 'Skeleton',
+    subtitle: 'Base Full Stack para Novos Projetos',
+    description:
+      'Base full stack reutilizável para iniciar novos sistemas sem reescrever a infraestrutura. Traz autenticação JWT com rotação e blacklist de refresh token, WebSocket autenticado com Django Channels, mensageria com Celery + Redis, storage S3 com SeaweedFS, i18n em português e inglês, CI no GitHub Actions e deploy com Docker atrás de Nginx.',
+    technologies: [
+      'Angular',
+      'TypeScript',
+      'Django',
+      'Django REST',
+      'Django Channels',
+      'PostgreSQL',
+      'Celery',
+      'Redis',
+      'JWT',
+      'Docker',
+      'Nginx',
+      'SeaweedFS (S3)',
+      'Transloco (i18n)',
+      'GitHub Actions'
+    ],
+    repositoryUrl: 'https://github.com/lexmoraes/skeleton',
+    imageUrl: 'assets/images/projects/skeleton.webp',
+    corporate: false
+  },
+
+  {
     id: '2',
     title: 'Bit Academy',
     subtitle: 'Ecossistema Inteligente de Gestão Escolar',
