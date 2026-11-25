@@ -1,5 +1,5 @@
-import { Component, signal, afterNextRender, inject} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, afterNextRender, computed, inject, signal } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Project } from '../../core/models/project';
@@ -17,7 +17,7 @@ declare const AOS: any;
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, ProjectListComponent, AboutComponent, ResumeComponent, ContactComponent, SkillsComponent],
+  imports: [CommonModule, NgOptimizedImage, MatButtonModule, MatIconModule, ProjectListComponent, AboutComponent, ResumeComponent, ContactComponent, SkillsComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -26,6 +26,15 @@ export class HomeComponent {
   developerName = signal<string>('Alexsandro Moraes');
 
   themeService = inject(ThemeService);
+
+  /** Uma foto por tema (WebP, 800px de largura). */
+  readonly profileImage = computed(() => {
+    switch (this.themeService.currentTheme()) {
+      case 'matrix': return 'assets/images/profile/profile-matrix.webp';
+      case 'light': return 'assets/images/profile/profile-light.webp';
+      default: return 'assets/images/profile/profile-dark.webp';
+    }
+  });
 
   constructor() {
     inject(SeoService).update({

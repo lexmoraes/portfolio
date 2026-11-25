@@ -7,7 +7,11 @@ export type ThemeMode = 'light' | 'dark' | 'matrix';
   providedIn: 'root'
 })
 export class ThemeService {
-  currentTheme = signal<ThemeMode>('light');
+  /**
+   * 'dark' é o tema padrão (mesmo do script em index.html); usar o mesmo
+   * valor no SSR faz o HTML pré-renderizado já vir com a foto correta.
+   */
+  currentTheme = signal<ThemeMode>('dark');
   private platformId = inject(PLATFORM_ID);
 
   constructor() {
