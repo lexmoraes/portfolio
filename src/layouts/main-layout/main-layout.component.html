@@ -14,63 +14,79 @@
 
   <div class="flex flex-col min-h-screen relative z-10">
 
+    <a href="#conteudo"
+       class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-portfolio-primary focus:text-portfolio-bg focus:font-semibold">
+      Pular para o conteúdo
+    </a>
+
     <header class="sticky top-0 z-50 border-b border-portfolio-border/20 backdrop-blur-xl bg-portfolio-bg/70 transition-colors duration-500">
       <nav class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-2">
 
-        <a href="#hero" class="text-lg sm:text-2xl font-black tracking-tight text-portfolio-heading flex-shrink-0">
-          Alexsandro<span class="text-portfolio-primary">.</span>
+        <a routerLink="/" fragment="hero"
+           class="text-lg sm:text-2xl font-black tracking-tight text-portfolio-heading flex-shrink-0 inline-flex items-center min-h-11 rounded-md"
+           aria-label="Alexsandro Moraes — voltar ao início">
+          Alexsandro<span class="text-portfolio-primary" aria-hidden="true">.</span>
         </a>
 
-        <div class="flex items-center gap-2.5 sm:gap-6 md:gap-8 text-xs sm:text-sm font-medium">
-          <a href="#hero" class="text-portfolio-text/90 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Início</a>
-          <a href="#projects" class="text-portfolio-text/90 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Projetos</a>
-          <a href="#about" class="text-portfolio-text/90 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Sobre</a>
-          <a href="#contato" class="text-portfolio-text/90 hover:text-portfolio-heading transition-all duration-300 flex-shrink-0">Contato</a>
+        <div class="flex items-center gap-1 sm:gap-4 md:gap-6 text-xs sm:text-sm font-medium">
+          @for (item of navItems; track item.id) {
+            <a routerLink="/"
+               [fragment]="item.id"
+               [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+               [class.hidden]="item.hideOnMobile"
+               [class.sm:inline-flex]="item.hideOnMobile"
+               [class.inline-flex]="!item.hideOnMobile"
+               [class.!text-portfolio-primary]="activeSection() === item.id"
+               class="items-center min-h-11 px-1.5 sm:px-2 rounded-md text-portfolio-text/90 hover:text-portfolio-heading transition-colors duration-300 flex-shrink-0">
+              {{ item.label }}
+            </a>
+          }
 
           <button [matMenuTriggerFor]="themeMenu"
                   mat-icon-button
-                  class="!text-portfolio-primary hover:scale-110 transition-all duration-300 flex-shrink-0">
-            <mat-icon>palette</mat-icon>
+                  aria-label="Alterar tema"
+                  class="!w-11 !h-11 !text-portfolio-primary hover:scale-110 transition-all duration-300 flex-shrink-0">
+            <mat-icon aria-hidden="true">palette</mat-icon>
           </button>
 
-          <mat-menu #themeMenu="matMenu" class="custom-theme-menu">
+          <mat-menu #themeMenu="matMenu" class="custom-theme-menu" aria-label="Escolha o tema">
 
-            <div class="menu-header block w-full">
+            <div class="menu-header block w-full" aria-hidden="true">
               <span class="text-[10px] uppercase tracking-widest font-bold block">Escolha o Tema</span>
             </div>
 
-            <button mat-menu-item (click)="themeService.setTheme('light')" class="w-full">
+            <button mat-menu-item role="menuitemradio" [attr.aria-checked]="themeService.currentTheme() === 'light'" (click)="themeService.setTheme('light')" class="w-full">
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center gap-2.5">
-                  <mat-icon>light_mode</mat-icon>
+                  <mat-icon aria-hidden="true">light_mode</mat-icon>
                   <span class="font-medium">Claro</span>
                 </div>
                 @if (themeService.currentTheme() === 'light') {
-                  <mat-icon class="check-icon">check</mat-icon>
+                  <mat-icon class="check-icon" aria-hidden="true">check</mat-icon>
                 }
               </div>
             </button>
 
-            <button mat-menu-item (click)="themeService.setTheme('dark')" class="w-full">
+            <button mat-menu-item role="menuitemradio" [attr.aria-checked]="themeService.currentTheme() === 'dark'" (click)="themeService.setTheme('dark')" class="w-full">
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center gap-2.5">
-                  <mat-icon>dark_mode</mat-icon>
+                  <mat-icon aria-hidden="true">dark_mode</mat-icon>
                   <span class="font-medium">Escuro</span>
                 </div>
                 @if (themeService.currentTheme() === 'dark') {
-                  <mat-icon class="check-icon">check</mat-icon>
+                  <mat-icon class="check-icon" aria-hidden="true">check</mat-icon>
                 }
               </div>
             </button>
 
-            <button mat-menu-item (click)="themeService.setTheme('matrix')" class="w-full">
+            <button mat-menu-item role="menuitemradio" [attr.aria-checked]="themeService.currentTheme() === 'matrix'" (click)="themeService.setTheme('matrix')" class="w-full">
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center gap-2.5">
-                  <mat-icon>terminal</mat-icon>
+                  <mat-icon aria-hidden="true">terminal</mat-icon>
                   <span class="font-medium">Matrix</span>
                 </div>
                 @if (themeService.currentTheme() === 'matrix') {
-                  <mat-icon class="check-icon">check</mat-icon>
+                  <mat-icon class="check-icon" aria-hidden="true">check</mat-icon>
                 }
               </div>
             </button>
@@ -81,7 +97,7 @@
       </nav>
     </header>
 
-    <main class="flex-grow">
+    <main id="conteudo" tabindex="-1" class="flex-grow focus:outline-none">
       <router-outlet></router-outlet>
     </main>
 
@@ -90,10 +106,10 @@
         <p class="text-sm text-portfolio-text/90">
           © 2026 Alexsandro Moraes
         </p>
-        <div class="flex items-center gap-5 text-sm">
-          <a href="https://github.com/lexmoraes" target="_blank" class="text-portfolio-text/90 hover:text-portfolio-primary transition-colors">GitHub</a>
-          <a href="https://www.linkedin.com/in/lexmoraes" target="_blank" class="text-portfolio-text/90 hover:text-portfolio-primary transition-colors">LinkedIn</a>
-        </div>
+        <nav aria-label="Redes sociais" class="flex items-center gap-4 text-sm">
+          <a href="https://github.com/lexmoraes" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 px-1 text-portfolio-text/90 hover:text-portfolio-primary transition-colors">GitHub<span class="sr-only"> (abre em nova aba)</span></a>
+          <a href="https://www.linkedin.com/in/lexmoraes" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 px-1 text-portfolio-text/90 hover:text-portfolio-primary transition-colors">LinkedIn<span class="sr-only"> (abre em nova aba)</span></a>
+        </nav>
       </div>
     </footer>
 
