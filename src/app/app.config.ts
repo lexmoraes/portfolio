@@ -1,4 +1,5 @@
-import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
+import { ApplicationConfig, inject, provideAppInitializer, provideZonelessChangeDetection } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
 import {
   provideRouter,
   withComponentInputBinding,
@@ -19,6 +20,10 @@ export const appConfig: ApplicationConfig = {
       // Clicar de novo no mesmo item do menu volta a rolar até a seção
       withRouterConfig({ onSameUrlNavigation: 'reload' })
     ),
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    // <mat-icon> usa a fonte Material Symbols (subconjunto carregado em index.html)
+    provideAppInitializer(() => {
+      inject(MatIconRegistry).setDefaultFontSetClass('material-symbols-outlined');
+    })
   ]
 };

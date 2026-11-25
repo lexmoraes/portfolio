@@ -31,18 +31,19 @@
       </div>
     </div>
 
-    <div class="flex justify-center items-center relative h-[450px] md:h-[550px]" data-aos="fade-left">
-      <div class="absolute w-[320px] h-[320px] md:w-[420px] md:h-[420px] bg-portfolio-primary opacity-40 animate-pulse-slow
+    <div class="flex justify-center items-center relative h-[340px] md:h-[550px]">
+      <div aria-hidden="true" class="absolute w-[300px] h-[300px] md:w-[420px] md:h-[420px] bg-portfolio-primary opacity-40 animate-pulse-slow
           rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] transition-all duration-500">
       </div>
 
-      <img [src]="themeService.currentTheme() === 'matrix'
-               ? 'assets/images/profile/profile-matrix.jpeg'
-               : themeService.currentTheme() === 'dark'
-                 ? 'assets/images/profile/profile-dark.jpeg'
-                 : 'assets/images/profile/profile-light.jpg'"
-           alt="Alexsandro Moraes"
-           class="relative z-10 w-[280px] md:w-[380px] h-[280px] md:h-[380px] object-cover rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] drop-shadow-[0_10px_20px_rgba(44,37,35,0.15)] border border-portfolio-border/30" />
+      <div class="relative z-10 w-[260px] h-[260px] md:w-[380px] md:h-[380px] overflow-hidden rounded-[42%_58%_70%_30%_/_45%_45%_55%_55%] border border-portfolio-border/30 drop-shadow-[0_10px_20px_rgba(44,37,35,0.15)]">
+        <img [ngSrc]="profileImage()"
+             fill
+             priority
+             sizes="(min-width: 768px) 380px, 260px"
+             alt="Foto de Alexsandro Moraes"
+             class="object-cover" />
+      </div>
     </div>
   </div>
 </section>
