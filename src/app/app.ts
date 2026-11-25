@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,5 +10,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  title = 'portfolio';
+  constructor() {
+    // Compensa o header fixo (h-20 = 80px) ao rolar até âncoras
+    inject(ViewportScroller).setOffset([0, 88]);
+  }
 }
