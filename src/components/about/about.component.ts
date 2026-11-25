@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 interface TimelineEvent {
   year: string;
@@ -11,7 +10,6 @@ interface TimelineEvent {
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './about.component.html'
 })
 export class AboutComponent {

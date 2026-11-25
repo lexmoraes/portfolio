@@ -109,6 +109,16 @@ html.matrix .matrix-bg {
   }
 }
 
+/* Entrada suave do texto do hero (desativada por prefers-reduced-motion) */
+.animate-fade-up {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
 @keyframes matrixMove {
   from { background-position: 0 0; }
   to { background-position: 0 1000px; }

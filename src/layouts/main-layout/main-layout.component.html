@@ -4,13 +4,11 @@
     <app-matrix-rain />
   }
 
-  <div class="matrix-bg"></div>
+  <div class="matrix-bg" aria-hidden="true"></div>
 
-  <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px]
+  <div aria-hidden="true" class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px]
               bg-portfolio-primary/10 blur-3xl rounded-full pointer-events-none transition-colors duration-500">
   </div>
-
-  <div id="tsparticles" class="absolute inset-0 -z-10 opacity-30"></div>
 
   <div class="flex flex-col min-h-screen relative z-10">
 
@@ -104,7 +102,7 @@
     <footer class="border-t border-portfolio-border/20 bg-portfolio-card/10 backdrop-blur-lg transition-colors duration-500">
       <div class="max-w-7xl mx-auto px-4 sm:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="text-sm text-portfolio-text/90">
-          © 2026 Alexsandro Moraes
+          © {{ currentYear }} Alexsandro Moraes
         </p>
         <nav aria-label="Redes sociais" class="flex items-center gap-4 text-sm">
           <a href="https://github.com/lexmoraes" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-11 px-1 text-portfolio-text/90 hover:text-portfolio-primary transition-colors">GitHub<span class="sr-only"> (abre em nova aba)</span></a>
