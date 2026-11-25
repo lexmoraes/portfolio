@@ -69,14 +69,6 @@ html.matrix, html.matrix body {
   font-family: 'Courier New', Courier, monospace !important;
 }
 
-.matrix-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  opacity: 0.5;
-}
-
 html.matrix .matrix-bg {
   display: block;
   position: fixed;
@@ -84,12 +76,18 @@ html.matrix .matrix-bg {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -10;
+  z-index: 0;
   opacity: 0.18;
   pointer-events: none;
   background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
   repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.15) 0px, rgba(0, 255, 0, 0.15) 1px, transparent 1px, transparent 10px);
   animation: matrixMove 20s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.matrix .matrix-bg {
+    animation: none;
+  }
 }
 
 @keyframes matrixMove {
