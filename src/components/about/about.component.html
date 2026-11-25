@@ -2,39 +2,39 @@
   <div class="max-w-3xl mx-auto px-6">
 
     <div class="mb-20 pb-16 border-b border-portfolio-border/40">
-      <h1 class="text-4xl font-extrabold tracking-tight text-portfolio-heading mb-6 transition-colors duration-500">
+      <h2 class="text-4xl font-extrabold tracking-tight text-portfolio-heading mb-6 transition-colors duration-500">
         Sobre Mim
-      </h1>
+      </h2>
       <p class="text-base md:text-lg text-portfolio-text leading-relaxed transition-colors duration-500">
   Olá! Meu nome é Alexsandro Moraes. Sou desenvolvedor Full Stack com experiência em Angular, Django REST Framework e PostgreSQL, além de atuar com suporte de segundo nível e melhoria de processos de TI. Gosto de transformar problemas complexos em soluções simples, escaláveis e bem estruturadas, unindo desenvolvimento de software, automação e boas práticas de engenharia para entregar aplicações de alta qualidade.
 </p>
     </div>
 
     <div>
-      <h2 class="text-2xl font-bold text-portfolio-heading mb-10 transition-colors duration-500">
+      <h3 class="text-2xl font-bold text-portfolio-heading mb-10 transition-colors duration-500">
         Trajetória & Conquistas
-      </h2>
+      </h3>
 
-      <div class="relative border-l-2 border-portfolio-border ml-4 space-y-12 py-2 transition-colors duration-500">
+      <ol class="relative border-l-2 border-portfolio-border ml-4 space-y-12 py-2 transition-colors duration-500">
         @for (event of history(); track event.title) {
-          <div class="relative pl-6">
-            <div class="absolute w-4 h-4 bg-portfolio-primary rounded-full -left-[9px] top-1.5 border-4 border-portfolio-bg shadow-sm transition-all duration-500"></div>
+          <li class="relative pl-6">
+            <div aria-hidden="true" class="absolute w-4 h-4 bg-portfolio-primary rounded-full -left-[9px] top-1.5 border-4 border-portfolio-bg shadow-sm transition-all duration-500"></div>
 
             <span class="text-xs font-mono font-bold text-portfolio-primary uppercase block mb-1 transition-colors duration-500">
               {{ event.year }}
             </span>
-            <h3 class="text-xl font-bold text-portfolio-heading leading-tight transition-colors duration-500">
+            <h4 class="text-xl font-bold text-portfolio-heading leading-tight transition-colors duration-500">
               {{ event.title }}
-            </h3>
+            </h4>
             <span class="text-sm text-portfolio-text/90 block mb-3 font-medium transition-colors duration-500">
               {{ event.institution }}
             </span>
             <p class="text-sm text-portfolio-text/90 leading-relaxed transition-colors duration-500">
               {{ event.description }}
             </p>
-          </div>
+          </li>
         }
-      </div>
+      </ol>
     </div>
 
   </div>

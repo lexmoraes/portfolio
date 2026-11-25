@@ -60,6 +60,25 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Foco visível consistente para navegação por teclado */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* Menos movimento para quem pede isso no sistema operacional */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Compensa a altura do header fixo (h-20) ao navegar por âncoras */
 [id] {
   scroll-margin-top: 5rem;
