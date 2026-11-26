@@ -4,7 +4,7 @@
 <p>Email: <a href="mailto:lexfisica&#64;gmail.com">lexfisica&#64;gmail.com</a> | Celular: +55 92 98492-2162 | Manaus, AM, Brasil</p>
 <p>Portfólio: <a href="https://www.alexmoraes.dev" target="_blank">alexmoraes.dev</a> | LinkedIn: <a href="https://www.linkedin.com/in/lexmoraes/" target="_blank">linkedin.com/in/lexmoraes</a></p>
 
-  <p><span class="highlight">Desenvolvedor Full Stack Júnior</span> com experiência em desenvolvimento web utilizando Angular, Django REST Framework e PostgreSQL, além de suporte técnico, gestão de chamados, automação de processos e implantação de melhorias internas. Experiência em Docker, Git, APIs REST, OAuth, WebSocket, Celery + Redis e metodologias ágeis (Scrum/Kanban), com formação complementar em Inteligência Artificial, Data Science, Machine Learning, automação e transformação digital pelo AX Academy.</p>
+  <p><span class="highlight">Desenvolvedor Full Stack Júnior</span> com experiência em desenvolvimento web utilizando Angular, Django REST Framework e PostgreSQL, levando sistemas a produção com Docker, CI/CD, testes automatizados, segurança e observabilidade. Experiência em APIs REST, OAuth, WebSocket, Celery + Redis, manutenção de microsserviços Java/Spring Boot e metodologias ágeis (Scrum/Kanban), com formação complementar em Inteligência Artificial, Data Science, Machine Learning, automação e transformação digital pelo AX Academy.</p>
 
   <div class="section">
     <h2>Formação Acadêmica</h2>
@@ -24,14 +24,16 @@
   <div class="section">
     <h2>Experiência Profissional</h2>
 
-<h3>Estagiário de Suporte em Tecnologia da Informação | ANOREG-AM</h3>
+<h3>Estagiário de Suporte em Tecnologia da Informação (atuação em desenvolvimento de sistemas) | ANOREG-AM</h3>
 <p class="exp-meta">Julho/2026 – Atual</p>
 <ul>
-  <li>Atendimento, registro, classificação e acompanhamento de chamados de suporte técnico aos usuários.</li>
-  <li>Suporte a servidores VM, acessos, redes e sistemas utilizados por clientes.</li>
-  <li>Elaboração e atualização de documentação técnica, tutoriais e procedimentos operacionais.</li>
-  <li>Monitoramento de demandas de TI e acompanhamento de pendências junto a fornecedores e equipes especializadas.</li>
-  <li>Desenvolvimento de novas funcionalidades, correções e melhorias de aplicações, automações, formulários e processos internos de produtos de software.</li>
+  <li>Reestruturação do sistema de gestão ISO 9001/14001 (fornecedores, RH, treinamentos, manutenção e procedimentos) de React + Supabase para Django + Angular, com migração dos dados e arquivos.</li>
+  <li>Segurança: login em duas etapas (TOTP), refresh token em cookie HttpOnly, rate limiting, Docker secrets, CSP e adequação à LGPD; correção de falha de segurança no acesso à API e aos arquivos do Portal do Associado.</li>
+  <li>Entrega contínua: CI com testes, tipagem, lint e varredura de vulnerabilidades (Trivy); imagens no GHCR; deploy por SSH com smoke test e rollback automático; HTTPS com Caddy; backup criptografado com teste de restauração.</li>
+  <li>Observabilidade: logs estruturados com rastreio de requisição, Sentry e métricas Prometheus.</li>
+  <li>Reescrita do Portal do Associado (Django 5.2 + Angular 22) em fases documentadas por ADRs; indicadores financeiros e auditoria de contribuições.</li>
+  <li>Novas funcionalidades e correções no Portal do Selo (microsserviços Java/Spring Boot + AngularJS), incluindo um OutOfMemory no serviço de relatórios, e homologação do serviço de IA (RAG).</li>
+  <li>Suporte de segundo nível, documentação técnica e acompanhamento de demandas com fornecedores.</li>
 </ul>
 
 <h3>Desenvolvedor Full Stack – Estagiário | FPFtech</h3>
@@ -67,17 +69,23 @@
     <ul>
       <li><span class="highlight">Skeleton:</span> Base full stack reutilizável para novos projetos — autenticação JWT, WebSocket (Django Channels), Celery + Redis, storage S3, i18n, CI no GitHub Actions e deploy com Docker + Nginx (<a href="https://github.com/lexmoraes/skeleton" target="_blank">github.com/lexmoraes/skeleton</a>).</li>
       <li><span class="highlight">Bit Academy:</span> Plataforma modular de gestão escolar com gamificação e métricas de desempenho (Angular + Django + PostgreSQL).</li>
-      <li><span class="highlight">Astrobit:</span> Website educacional premiado e publicado cientificamente (Angular + Django REST Framework + Godot Engine).</li>
-      <li><span class="highlight">Bit Debugger:</span> Jogo educativo em Python, premiado na Mostratech X.</li>
+      <li><span class="highlight">Astrobit:</span> Website educacional, 1º lugar na XV Mostratech e publicado em artigo científico pela UFSM; backend e modelagem do banco de dados (Angular + Django REST Framework + Godot Engine).</li>
+      <li><span class="highlight">Bit Debugger:</span> Jogo educativo em Python (Pygame + PostgreSQL), 1º lugar na X Mostratech.</li>
       <li><span class="highlight">Portfólio Pessoal:</span> Apresenta projetos, experiência profissional e publicações (<a href="https://alexmoraes.dev" target="_blank">alexmoraes.dev</a>).</li>
     </ul>
   </div>
 
   <div class="section">
     <h2>Habilidades Técnicas</h2>
-    <p>
-      Desenvolvimento frontend com <strong>Angular</strong> e <strong>TypeScript</strong>; backend com <strong>Django REST Framework</strong>; criação e consumo de <strong>APIs REST</strong>; integração com <strong>PostgreSQL</strong> e <strong>SQLite</strong>. Containerização com <strong>Docker</strong> e <strong>Nginx</strong>, versionamento com <strong>Git</strong> e CI com <strong>GitHub Actions</strong>, mensageria com <strong>Celery + Redis</strong>, autenticação via <strong>OAuth</strong> e comunicação em tempo real via <strong>WebSocket</strong> (<strong>Django Channels</strong>). Experiência com <strong>Python</strong>, <strong>Java</strong>, <strong>Go</strong>, <strong>NestJS</strong>, <strong>Prisma</strong>, <strong>GSAP</strong>, design responsivo e metodologias ágeis. Conhecimentos em <strong>Inteligência Artificial</strong>, <strong>Data Science</strong>, <strong>Machine Learning</strong>, <strong>automação de processos</strong> e <strong>transformação digital</strong> em desenvolvimento por meio do AX Academy.
-    </p>
+    <ul>
+      <li><strong>Frontend:</strong> Angular (Signals, standalone, SSR), TypeScript, RxJS, Angular Material, TailwindCSS, AngularJS, GSAP, design responsivo e acessibilidade (WCAG).</li>
+      <li><strong>Backend:</strong> Python, Django, Django REST Framework, Django Channels (WebSocket), Celery + Redis, APIs REST com contrato OpenAPI, JWT, OAuth, Java/Spring Boot (microsserviços), NestJS, Prisma e Go.</li>
+      <li><strong>Dados:</strong> PostgreSQL, SQLite, MySQL, Redis, armazenamento S3 (SeaweedFS, MinIO) e Liquibase.</li>
+      <li><strong>DevOps e segurança:</strong> Docker e Docker Compose, Nginx, Caddy, Linux, GitHub Actions, deploy com rollback, Trivy, 2FA (TOTP), rate limiting, CSP e LGPD.</li>
+      <li><strong>Qualidade e observabilidade:</strong> pytest, mypy, Ruff, ESLint, Vitest, Playwright, Sentry e Prometheus.</li>
+      <li><strong>Processos:</strong> Git/Gitflow, code review, ADRs, Scrum e Kanban.</li>
+      <li><strong>IA e dados:</strong> Inteligência Artificial, Data Science, Machine Learning, RAG e MCP, em desenvolvimento pelo AX Academy.</li>
+    </ul>
   </div>
 
   <div class="section">

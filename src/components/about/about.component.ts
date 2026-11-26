@@ -16,10 +16,10 @@ export class AboutComponent {
   history = signal<TimelineEvent[]>([
   {
     year: 'Julho/2026 - Atual',
-    title: 'Estagiário de Suporte em Tecnologia da Informação',
+    title: 'Estagiário de Suporte em TI, com atuação em desenvolvimento de sistemas',
     institution: 'ANOREG-AM',
     description:
-      'Suporte de segundo nível, atendimento de chamados, documentação técnica, automação de processos, testes de sistemas e melhoria contínua dos serviços de TI.'
+      'Desenvolvimento e manutenção dos sistemas da associação e dos cartórios do Amazonas: reestruturação do sistema de gestão ISO 9001/14001 em Django + Angular, reescrita do Portal do Associado e novas funcionalidades no Portal do Selo (Java/Spring Boot). Hardening de segurança, CI/CD com deploy e rollback automáticos, homologação de serviços de IA e suporte de segundo nível.'
   },
   {
     year: 'Abril/2025 - Junho/2026',
