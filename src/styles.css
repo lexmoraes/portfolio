@@ -10,20 +10,12 @@
   --color-portfolio-primary: var(--primary-color);
 }
 
-/* 🟢 ESTADO 1: CLARO BOHO (PADRÃO) */
-:root, html, html.light {
-  --bg-page: #E0D3BA;
-  --bg-card: #DCCBA4;
-  --border-color: #D9BE98;
-  --text-body: #4A403B;
-  --text-heading: #1A1513;
-  --primary-color: #7F4A1E; /* contraste AA (≥4.5:1) sobre o fundo e os cards */
-  --menu-hover: rgba(127, 74, 30, 0.12);
-  color-scheme: light;
-}
-
-/* 🟤 ESTADO 2: ESCURO TERROSO (DARK) */
-html.dark {
+/*
+ * 🟤 ESTADO 1: ESCURO TERROSO (PADRÃO)
+ * Mesmo padrão do ThemeService e do script de tema em index.html: sem
+ * classe no <html> (SSR, JS desativado) a página já sai no tema escuro.
+ */
+:root, html, html.dark {
   --bg-page: #12100E;
   --bg-card: #1A1714;
   --border-color: #2C2523;
@@ -32,6 +24,18 @@ html.dark {
   --primary-color: #CEB07D;
   --menu-hover: rgba(206, 176, 125, 0.14);
   color-scheme: dark;
+}
+
+/* 🟢 ESTADO 2: CLARO BOHO */
+html.light {
+  --bg-page: #E0D3BA;
+  --bg-card: #DCCBA4;
+  --border-color: #D9BE98;
+  --text-body: #4A403B;
+  --text-heading: #1A1513;
+  --primary-color: #7F4A1E; /* contraste AA (≥4.5:1) sobre o fundo e os cards */
+  --menu-hover: rgba(127, 74, 30, 0.12);
+  color-scheme: light;
 }
 
 /* 🟢 ESTADO 3: MATRIX MODE */
@@ -53,6 +57,15 @@ html, body {
   background-color: var(--bg-page);
   color: var(--text-body);
   min-height: 100vh;
+}
+
+/*
+ * A transição de cores só vale depois que o usuário troca de tema
+ * (ThemeService adiciona a classe). No carregamento, o tema salvo é
+ * aplicado de uma vez, sem animar a partir do tema padrão.
+ */
+html.theme-transitions,
+html.theme-transitions body {
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
