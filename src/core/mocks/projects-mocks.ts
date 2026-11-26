@@ -2,6 +2,52 @@ import { Project } from '../models/project';
 
 export const MOCK_PROJECTS: Project[] = [
   {
+    id: '9',
+    title: 'Qualifica',
+    subtitle: 'Sistema de Gestão da Qualidade ISO 9001 · 14001',
+    description:
+      'Reestruturação completa do sistema de gestão da qualidade da ANOREG-AM, de React + Supabase para Django + Angular, com migração dos dados. Módulos de fornecedores, RH, treinamentos, manutenção/TI e procedimentos, com notificações em tempo real. Inclui login em duas etapas (TOTP), adequação à LGPD, trilha de auditoria, CI com testes E2E e varredura de vulnerabilidades, deploy com rollback automático, backup criptografado e monitoramento com Sentry e Prometheus.',
+    technologies: [
+      'Angular',
+      'TypeScript',
+      'Django',
+      'Django REST',
+      'Django Channels',
+      'PostgreSQL',
+      'Celery',
+      'Redis',
+      'SeaweedFS (S3)',
+      'Docker',
+      'Caddy',
+      'GitHub Actions',
+      'Playwright',
+      'Prometheus'
+    ],
+    corporate: true,
+    company: 'ANOREG-AM'
+  },
+
+  {
+    id: '10',
+    title: 'Portal do Selo',
+    subtitle: 'Selo Digital dos Cartórios do Amazonas',
+    description:
+      'Contribuição em sistema legado de microsserviços que controla o selo digital dos atos dos cartórios. Filtros, tabelas e relatórios Excel nas listagens de cartórios e usuários, controle de acesso por cartório com escopo calculado no servidor, correção de OutOfMemory no serviço de relatórios e homologação do serviço de IA (RAG) que apoia as correições.',
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'AngularJS',
+      'PostgreSQL',
+      'Liquibase',
+      'Keycloak',
+      'Docker',
+      'RAG'
+    ],
+    corporate: true,
+    company: 'ANOREG-AM'
+  },
+
+  {
     id: '1',
     title: 'Planit',
     subtitle: 'Plataforma Corporativa de Gestão Ágil',
@@ -78,7 +124,7 @@ export const MOCK_PROJECTS: Project[] = [
     title: 'Bit Debugger',
     subtitle: 'Jogo Educacional Gamificado',
     description:
-      'Jogo educacional desenvolvido em equipe com foco no ensino de lógica e programação. Projeto premiado com medalha de ouro na Mostratech da FPFtech, utilizando Python, PostgreSQL e ferramentas de game design para criar uma experiência interativa e educativa.',
+      'Jogo educacional desenvolvido em equipe com foco no ensino de lógica e programação. Projeto premiado com o 1º lugar na X Mostratech da FPFtech, utilizando Python, PostgreSQL e ferramentas de game design para criar uma experiência interativa e educativa.',
     technologies: [
       'Python',
       'PostgreSQL',
@@ -96,7 +142,7 @@ export const MOCK_PROJECTS: Project[] = [
     title: 'Astrobit',
     subtitle: 'Plataforma Gamificada de Aprendizado',
     description:
-      'Projeto educacional gamificado publicado em artigo científico pela Universidade Federal de Santa Maria (UFSM). Desenvolvimento frontend com Angular, backend em Django REST Framework e jogos desenvolvidos na Godot Engine.',
+      'Projeto educacional gamificado, 1º lugar na XV Mostratech da FPFtech e publicado em artigo científico pela Universidade Federal de Santa Maria (UFSM). Atuação no backend e na modelagem do banco de dados. Desenvolvimento frontend com Angular, backend em Django REST Framework e jogos desenvolvidos na Godot Engine.',
     technologies: [
       'Angular',
       'TypeScript',
