@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:portfolio": "node dist/portfolio/server/server.mjs",
-    "cv:pdf": "node scripts/generate-cv-pdf.mjs"
+    "cv:pdf": "node scripts/generate-cv-pdf.mjs",
+    "format": "prettier --write \"src/**/*.{ts,html,css,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,css,json}\""
   },
   "private": true,
   "packageManager": "npm@11.13.0",

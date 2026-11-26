@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [master, develop]
+  pull_request:
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      # TODO: adicionar `npm run format:check` depois de formatar o código com `npm run format`
+      - run: npx ng test --watch=false
+      # Build de produção com pré-renderização das rotas (/ e /curriculo)
+      - run: npm run build
