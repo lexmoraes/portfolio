@@ -6,6 +6,16 @@ export type ThemeMode = 'light' | 'dark' | 'matrix';
 const STORAGE_KEY = 'user-portfolio-theme';
 const THEMES: readonly ThemeMode[] = ['light', 'dark', 'matrix'];
 
+/** Cor da barra do navegador no celular (<meta name="theme-color">) = --bg-page de cada tema. */
+const THEME_COLORS: Record<ThemeMode, string> = {
+  light: '#E0D3BA',
+  dark: '#12100E',
+  matrix: '#000000'
+};
+
+/** Classe que liga a transição de cores (styles.css) só após a primeira troca. */
+const TRANSITIONS_CLASS = 'theme-transitions';
+
 const isThemeMode = (value: unknown): value is ThemeMode =>
   THEMES.includes(value as ThemeMode);
 
@@ -23,11 +33,20 @@ export class ThemeService {
 
   constructor() {
     if (isPlatformBrowser(this.platformId)) {
-      this.setTheme(this.readStoredTheme() ?? 'dark');
+      // Sem transição: o script de index.html já pintou a página com este tema
+      this.applyTheme(this.readStoredTheme() ?? 'dark');
     }
   }
 
+  /** Troca feita pelo usuário: anima a mudança de cores. */
   setTheme(theme: ThemeMode): void {
+    if (isPlatformBrowser(this.platformId)) {
+      document.documentElement.classList.add(TRANSITIONS_CLASS);
+    }
+    this.applyTheme(theme);
+  }
+
+  private applyTheme(theme: ThemeMode): void {
     this.currentTheme.set(theme);
 
     if (isPlatformBrowser(this.platformId)) {
@@ -39,6 +58,7 @@ export class ThemeService {
       const root = document.documentElement;
       root.classList.remove(...THEMES);
       root.classList.add(theme);
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', THEME_COLORS[theme]);
     }
   }
 

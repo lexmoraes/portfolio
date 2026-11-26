@@ -33,4 +33,23 @@ describe('ThemeService', () => {
     expect(document.documentElement.classList.contains('light')).toBe(true);
     expect(document.documentElement.classList.contains('dark')).toBe(false);
   });
+
+  it('does not animate the initial theme, only user changes', () => {
+    localStorage.setItem('user-portfolio-theme', 'light');
+    const service = TestBed.inject(ThemeService);
+    expect(document.documentElement.classList.contains('theme-transitions')).toBe(false);
+    service.setTheme('dark');
+    expect(document.documentElement.classList.contains('theme-transitions')).toBe(true);
+  });
+
+  it('keeps the browser theme-color in sync with the theme', () => {
+    const meta = document.createElement('meta');
+    meta.name = 'theme-color';
+    document.head.appendChild(meta);
+    const service = TestBed.inject(ThemeService);
+    expect(meta.content).toBe('#12100E');
+    service.setTheme('matrix');
+    expect(meta.content).toBe('#000000');
+    meta.remove();
+  });
 });
