@@ -30,6 +30,7 @@ npm ci
 npm start          # servidor de desenvolvimento em http://localhost:4200
 npm test           # testes unitários (Vitest)
 npm run build      # build de produção com pré-renderização
+npm run format     # formata o código com o Prettier
 ```
 
 ### Atualizar o PDF do currículo
