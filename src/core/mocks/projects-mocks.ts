@@ -124,7 +124,7 @@ export const MOCK_PROJECTS: Project[] = [
     title: 'Bit Debugger',
     subtitle: 'Jogo Educacional Gamificado',
     description:
-      'Jogo educacional desenvolvido em equipe com foco no ensino de lógica e programação. Projeto premiado com medalha de ouro na Mostratech da FPFtech, utilizando Python, PostgreSQL e ferramentas de game design para criar uma experiência interativa e educativa.',
+      'Jogo educacional desenvolvido em equipe com foco no ensino de lógica e programação. Projeto premiado com o 1º lugar na X Mostratech da FPFtech, utilizando Python, PostgreSQL e ferramentas de game design para criar uma experiência interativa e educativa.',
     technologies: [
       'Python',
       'PostgreSQL',
@@ -142,7 +142,7 @@ export const MOCK_PROJECTS: Project[] = [
     title: 'Astrobit',
     subtitle: 'Plataforma Gamificada de Aprendizado',
     description:
-      'Projeto educacional gamificado publicado em artigo científico pela Universidade Federal de Santa Maria (UFSM). Desenvolvimento frontend com Angular, backend em Django REST Framework e jogos desenvolvidos na Godot Engine.',
+      'Projeto educacional gamificado, 1º lugar na XV Mostratech da FPFtech e publicado em artigo científico pela Universidade Federal de Santa Maria (UFSM). Atuação no backend e na modelagem do banco de dados. Desenvolvimento frontend com Angular, backend em Django REST Framework e jogos desenvolvidos na Godot Engine.',
     technologies: [
       'Angular',
       'TypeScript',
